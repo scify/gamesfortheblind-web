@@ -1,0 +1,31 @@
+Font license info:
+This Font Software was built starting from a fontello package (http://fontello.com/). Different icons were taken from different packages. Below you can find all the information about the font licenses and authors.
+
+---------------------------------------
+
+
+## Entypo
+
+   Copyright (C) 2012 by Daniel Bruce
+
+   Author:    Daniel Bruce
+   License:   SIL (http://scripts.sil.org/OFL)
+   Homepage:  http://www.entypo.com
+
+
+## Elusive
+
+   Copyright (C) 2013 by Aristeides Stathopoulos
+
+   Author:    Aristeides Stathopoulos
+   License:   SIL (http://scripts.sil.org/OFL)
+   Homepage:  http://aristeides.com/
+
+
+## Zhong accessibility icon
+
+   Copyright (C) 2013 by Francesco Zaniol
+
+   Author:    Francesco Zaniol
+   License:   SIL (http://scripts.sil.org/OFL)
+   Homepage:  http://www.accessibletemplate.com/

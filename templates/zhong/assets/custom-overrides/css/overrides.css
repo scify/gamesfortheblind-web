@@ -1,0 +1,12 @@
+/*----------------------------------------------------------------
+-  Add here your custom overrides to the default template style
+---------------------------------------------------------------- */
+/**
+ * IMPORTANT: be aware that this file is included in ALL layouts and ALL graphic modes.
+ * IMPORTANT: Remember to add the correct body class to ANY override you add:
+ * --- LAYOUT BODY CLASSES: ---
+ * "body.default-layout" | "body.full-access" | "body.high-contrast" | "body.mobile-layout"
+ * --- GRAPHIC MODE BODY CLASSES: ---
+ * "body.default-graphic-mode" | "body.night-mode" | "body.best-legibility"
+ * HINT: check the <body> element, you will find many other useful classes
+**/

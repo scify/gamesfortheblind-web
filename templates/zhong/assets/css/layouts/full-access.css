@@ -1,0 +1,359 @@
+/**
+ * @package   Zhong - accessibletemplate
+ * @version   2.2.0
+ * @author    Francesco Zaniol, accessibletemplate - http://www.accessibletemplate.com
+ * @copyright Copyright (C) 2011-Present Francesco Zaniol
+ * @license   accessibletemplate Terms & Conditions - http://www.accessibletemplate.com/en/terms-and-conditions
+ **/
+/**
+ * This CSS defines the style for the "full access" layout
+**/
+/*-------------------------
+-  GENERAL TAGS
+------------------------ */
+/* Focused objects
+--------------------------- */
+a:focus,button:focus,input:focus,textarea:focus,select:focus{background-color:#FC0 !important;color:#200 !important;text-decoration:none !important;}
+a:focus img{border:solid 2px #D93A2B;background-color:#FC0;}
+/*-------------------------
+-  INTERNAL NAVIGATION SYSTEM
+------------------------ */
+/* Internal navigation menu
+--------------------------- */
+	#anchors-menu-container{
+		display:block;
+		position:relative;
+		left:0;
+		top:0;
+		width:auto;
+		font-size:0.91em;
+		overflow:hidden;
+		margin:0;
+		}
+	#anchors-menu-container .section-heading{
+		display:block;
+		position:relative;
+		top:0;
+		left:0;
+		width:auto;
+		background:#F2F2F2;
+		color:#444;
+		border:0;
+		border-bottom:1px solid #C6C9C9;
+		font-size:0.91em;
+		margin:0;
+		padding:0.5em 0.4em;
+		text-indent:0;
+		font-weight:normal;
+		font-style:italic;
+		text-align:center;
+		}
+	#anchors-menu-container #anchors-menu{
+		display:block;
+		margin:0 1%;
+		padding:0;
+		list-style:none;
+		border-top:0;
+		overflow:hidden;
+		}
+	#anchors-menu-container #anchors-menu li{
+		padding:0;
+		margin:0;
+		float:left;
+		width:25%;
+		}
+/* Internal navigation menu - links
+--------------------------- */
+	#anchors-menu-container li a,
+	#anchors-menu-container li a:link,
+	#anchors-menu-container li a:visited{
+		line-height:110%;
+		color:#D93A2B;
+		text-decoration:none;
+		font-size:0.813em;
+		display:block;
+		width:auto;
+		background-color:#FFF;
+		border:1px solid #C6C9C9;
+		border-top:0;
+		margin:0;
+		padding:0.308em 0.308em 0.462em 27px;
+		background-image:url('../../images/framework/icons/internal-link.png');
+		background-position:4px center;
+		background-repeat:no-repeat;
+		}
+	#anchors-menu-container li a:hover,
+	#anchors-menu-container li a:active{color:#000;background-color:#EEE;}
+	#anchors-menu-container li a#internal-link-mainmenu,
+	#anchors-menu-container li a#internal-link-topmenu,
+	#anchors-menu-container li a#internal-link-breadcrumbs,
+	#anchors-menu-container li a#internal-link-footermenu
+		{background-image:url('../../images/framework/icons/internal-link-menu.png');}
+	#anchors-menu-container li a#internal-link-accessibilityoptions
+		{background-image:url('../../images/framework/icons/internal-link-accessib.png');}
+	#anchors-menu-container li a#internal-link-content
+		{background-image:url('../../images/framework/icons/internal-link-content.png');}
+	#anchors-menu-container li a#internal-link-search
+		{background-image:url('../../images/framework/icons/internal-link-search.png');}
+	#anchors-menu-container li a#internal-link-login
+		{background-image:url('../../images/framework/icons/internal-link-login.png');}
+	#anchors-menu-container li a#internal-link-help
+		{background-image:url('../../images/framework/icons/internal-link-help.png');}
+	#anchors-menu-container li a#internal-link-language
+		{background-image:url('../../images/framework/icons/internal-link-language.png');}
+	/* accesskeys span */
+	#anchors-menu-container li a em{color:#000;}
+/* "Top" anchor style
+--------------------------- */
+	.anchors-container{
+		width:100%;
+		clear:both;
+		overflow:hidden;
+		}
+	.anchors-container a,
+	.anchors-container a:link,
+	.anchors-container a:visited{
+		display:block;
+		padding:0.3em 6px 0.3em 21px;
+		margin:0 0 1px 1px;
+		background:#444;
+		color:#FFF;
+		float:right;
+		font-size:0.813em;
+		background-position:center left;
+		background-repeat:no-repeat;
+		background-image:url('../../images/framework/icons/arrow-up-white-alt.png');
+		text-decoration:none;
+		border-radius:0.4em;
+		-moz-border-radius:0.4em;
+		-webkit-border-radius:0.4em;
+		}
+	.anchors-container a:hover,.anchors-container a:focus,.anchors-container a:active{
+		color:#111;
+		background:#BBB;
+		background-position:center left;
+		background-repeat:no-repeat;
+		background-image:url('../../images/framework/icons/arrow-up-white-alt.png');
+		}
+	.anchors-container hr{}
+/* Section titles style
+--------------------------- */
+	.section-heading{
+		display:block;
+		margin:0 0 0.6em 0;
+		padding:0.18em 0 0.24em 0;
+		width:100%;
+		clear:both;
+		font-size:1em;
+		font-weight: normal;
+		color:#444;
+		background-color:#E0DEDE;
+		border-top:solid 1px #D9D5D0;
+		border-bottom:solid 1px #A8A6A6;
+		text-indent:0.6em;
+		text-shadow:1px 1px 1px #E6E3E3;
+		}
+/* Content section title
+--------------------------- */
+	.page-content-section-heading{background-color:#B8F851;}
+/*-------------------------
+-  LAYOUT CONTAINER
+------------------------ */
+#layout-container_zng{
+	position:relative;
+	width:auto !important;
+	border:solid 1px #C6C9C9;
+	padding:1em 1px 1px 1px;
+	margin-top:0.6em !important;
+	margin-bottom:1.6em;
+	margin-left:6%;
+	margin-right:6%;
+	top:1px !important;
+	background:#FAF7F7;
+	}
+/*-------------------------
+-  WEBSITE PRESENTATION
+------------------------ */
+#website-banner{
+	width:94%;
+	margin:0 3%;
+	position:relative;
+	padding:0 0 0.6em 0;
+	}
+#website-banner #logo-wrap{
+	margin:0;
+	width:100%;
+	text-align:center;
+	}
+#website-banner #logo-wrap img{margin:0 auto}
+#website-banner #titles-container{margin:0 auto}
+#website-banner #titles-container-inner{position:relative;}
+#website-banner #title{
+	font-size:3em;
+	display:block;
+	width:100%;
+	margin:0 auto;
+	line-height:1.2em;
+	text-align:center;
+	font-style:normal;
+	}
+#website-banner #subtitle{
+	font-size:1em;
+	display:block;
+	width:100%;
+	margin:0 auto;
+	color:#777;
+	text-align:center;
+	}
+/*-------------------------
+-  BREADCRUMBS STYLE
+------------------------ */
+#breadcrumbs{
+	width:94%;
+	margin:0.8em 3%;
+	position:relative;
+	padding:0.6em 0;
+	font-style:italic;
+	text-indent:0.6em;
+	border-top:1px dotted #CCC;
+	border-bottom:1px dotted #CCC;
+	}
+#breadcrumbs a{font-style:normal;}
+/*-------------------------
+-  ACCESSIBILITY PANEL -old
+------------------------ */
+#top-layout-container #accessibility-panel-inner{
+	width:94%;
+	margin:0 3%;
+	position:relative;
+	padding:0 0 0.6em 0;
+	overflow:hidden;
+	}
+#top-layout-container #accessibility-panel .accessibility-module{
+	position:relative;
+	overflow:visible;
+	margin:2px auto;
+	}
+#top-layout-container #accessibility-panel .accessibility-module h2{
+	display:block;
+	font-size:1em;
+	padding:0 2% 0 0;
+	margin:1px;
+	float:left;
+	}
+#top-layout-container #accessibility-panel .accessibility-module ul{
+	display:block;
+	list-style:none;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+	}
+#top-layout-container #accessibility-panel .accessibility-module ul li{
+	display:block;
+	float:left;
+	margin:1px 1px 1px 0;
+	padding:0;
+	text-align:center;
+	}
+#top-layout-container #accessibility-panel .accessibility-module button{
+	margin:auto 1px;
+	padding:0;
+	}
+#top-layout-container #accessibility-panel .accessibility-module a{
+	float:left;
+	}
+/*-------------------------
+-  CONTENT BODY ( #left,#main-content-container,#right )
+------------------------ */
+#main-body{position:relative;border:none;}
+/*-------------------------
+-  SECTIONS' margins
+------------------------ */
+#left-additional,
+#right,
+#footer,
+#main-menu-container,
+#side-menu,
+#login-module,
+#search-module-inner,
+.custom-modules-container,
+#main-article-container{
+	width:94%;
+	margin:0 3%;
+	position:relative;
+	padding:0 0 0.6em 0;
+	}
+/*-------------------------
+-  MENUS
+------------------------ */
+/* Deep navigation mode */
+.menu-container li{list-style-type:circle;}
+.menu-container ul li.parent{list-style-type:disc;}
+.menu-container ul li.current>a{font-weight:bold;}
+/* Collapsable mode */
+.full-access_menus-navigation-mode_collapsable .menu-container ul ul{display:none;}
+.full-access_menus-navigation-mode_collapsable .menu-container ul li.active>ul{display:block;}
+/*-------------------------
+-  OTHER ELEMENTS
+------------------------ */
+/* special <a> elements
+--------------------------- */
+.opens-new-window-link,.external-link{
+	display:inline-block;
+	overflow:hidden;
+	text-indent:-9999px;
+	width:20px;
+	height:16px;
+	background-position:2px 0;
+	background-repeat:no-repeat;
+	}
+.opens-new-window-link{background-image:url('../../images/framework/icons/opens-new-window.png')}
+.external-link{background-image:url('../../images/framework/icons/external-link.png')}
+/* Col-styles & Marked blocks
+--------------------------- */
+/* Columns
+--------------------------- */
+.column-1,.column-2,.column-3,
+.cols-1,.cols-2 .column-1,.cols-2 .column-2,.cols-3 .column-1,.cols-3 .column-2,.cols-3 .column-3,
+.cols-4 .column-1,.cols-4 .column-2,.cols-4 .column-3,.cols-4 .column-4,
+.col-style-full,.col-style-2,.col-style-3,.col-style-4,.col-style-5,.col-style-6,
+.custom-module_column-width-1,.custom-module_column-width-2,.custom-module_column-width-3,.custom-module_column-width-4,
+.marked-block-dark,.marked-block-light,
+.marked-block-dark.col-style-full,.marked-block-light.col-style-full,
+.marked-block-dark.col-style-2,.marked-block-light.col-style-2,
+.marked-block-dark.col-style-3,.marked-block-light.col-style-3,
+.marked-block-dark.col-style-4,.marked-block-light.col-style-4,
+.marked-block-dark.col-style-5,.marked-block-light.col-style-5,
+.marked-block-dark.col-style-6,.marked-block-light.col-style-6{
+	display:block;
+	float:none;
+	width:auto;
+	margin:1em 2%;
+	clear:both;
+	}
+#message-screen-users-block,.obsolete-browser-alert{display:none;}
+/*-------------------------
+-  INVISIBLE ELEMENTS
+------------------------ */
+#search-module-inner label,#gradient-effect{
+	display:block;
+	position:absolute;
+	top:-9999px;
+	left:-9999px;
+	height:0;
+	width:0;
+	}
+
+/*==========================================================================
+   PLATFORM SPECIFICATIONS
+==========================================================================*/
+/*----------------------------------------------------------------
+-  JOOMLA 3
+---------------------------------------------------------------- */
+/*Removed elements*/
+.parent-cms-Joomla3 .dropdown-toggle,
+.parent-cms-Joomla3 #breadcrumbs .divider{display: none !important;visibility: hidden !important;}
+
+/*==========================================================================
+   ADD YOUR PERSONAL STYLE HERE:
+==========================================================================*/

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="content">
+	<name>ijseo_plugin</name>
+	<author>iJoomla</author>
+	<creationDate>01 June 2012</creationDate>
+	<copyright>(C) 2006-2008 iJoomla.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>webmaster@ijoomla.com</authorEmail>
+	<authorUrl>www.ijoomla.com</authorUrl>
+	<version>3.0.0</version>
+	<description>"This is the iJoomla SEO plugin, make sure it`s always published in order to display the metatags on your site"</description>
+	<files>
+		<filename plugin="ijseo_plugin">ijseo_plugin.php</filename>
+		<filename>index.html</filename>
+	</files>
+</extension>

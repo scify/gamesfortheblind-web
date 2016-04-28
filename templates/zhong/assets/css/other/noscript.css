@@ -1,0 +1,28 @@
+/**
+ * @package   Zhong - accessibletemplate
+ * @version   2.2.0
+ * @author    Francesco Zaniol, accessibletemplate - http://www.accessibletemplate.com
+ * @copyright Copyright (C) 2011-Present Francesco Zaniol
+ * @license   accessibletemplate Terms & Conditions - http://www.accessibletemplate.com/en/terms-and-conditions
+ **/
+/**
+ * This CSS defines the style if javascript is disabled
+ * IMPORTANT: remember to add the prefix ".no-js" to any new rule
+**/
+
+.no-js #accessibility-panel{
+	display: block !important;
+	position: relative !important;
+	visibility: visible !important;
+	overflow: visible !important;
+	}
+/* If "icon-style" is set */
+.no-js .access-button-icon-enabled #show-accessibility-noscript{
+	text-indent:-9999px;
+	background-image:url('../../images/framework/accessibility-icon/accessibility-icon-dark-small.png');
+	padding:0;
+	width:40px;
+	height:36px;
+	top:-36px;
+	background-position:4px 2px;
+	}

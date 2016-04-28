@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="component"
+			  label="COM_JUSERTUBE_COMPONENT_LABEL"
+			  description="COM_JUSERTUBE_COMPONENT_DESC"
+			>
+
+		<field name="jusertube_key" type="TEXT"
+			   default="AIzaSyBEreAv5Ps2kTKcYDVnUTWARTh_KoLjweA"
+			   description="COM_JUSERTUBE_API_KEY_DESC"
+			   label="COM_JUSERTUBE_API_KEY_LABEL"
+				/>
+	</fieldset>
+</config>

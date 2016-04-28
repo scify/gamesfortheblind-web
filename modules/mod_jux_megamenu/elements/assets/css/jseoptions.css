@@ -1,0 +1,32 @@
+/**
+ * ------------------------------------------------------------------------
+ * JSE Options: enhance function for module configuration
+ * ------------------------------------------------------------------------
+ * Copyright (C) 2008-2013 Joomseller Solutions. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: Joomseller
+ * Websites: http://www.joomseller.com
+ * ------------------------------------------------------------------------
+ */
+ 
+ .megamenu-content {
+	float: left;
+	max-width: 520px;
+}
+
+.megamenu-content h3 {
+	margin-bottom: 10px;
+}
+
+.megamenu-content ul {
+	list-style-image: url(../images/tick.png);
+	margin-bottom: 20px;
+}
+
+.megamenu-content li {
+	margin-bottom: 12px;
+}
+
+.megamenu-content strong {
+	color: #E24932;
+}

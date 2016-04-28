@@ -1,0 +1,301 @@
+/**
+ * @version		$Id$
+ * @author		JoomlaUX!
+ * @package		Joomla.Site
+ * @subpackage	mod_jux_megamenu
+ * @copyright	Copyright (C) 2008 - 2013 by JoomlaUX. All rights reserved.
+ * @license		http://www.gnu.org/licenses/gpl.html GNU/GPL version 3
+*/
+
+#js-meganav{
+    display: block;
+}
+
+@media screen and (max-width: 767px) {
+	.megamenu-sticky {
+		text-align: left;
+	}
+	#js-mainnav.megamenu.noJS #css3-megaMenuToggle,
+	#js-mainnav.megamenu #js-megaMenuToggle {
+		display: block;
+		padding: 12px 15px;
+		cursor: pointer;
+		font-size: 10px;
+		text-transform: uppercase;
+		text-align: left;
+	}
+	
+	#js-mainnav.megamenu #js-megaMenuToggle { display: block !important; }
+	
+	#js-mainnav.megamenu.noJS #css3-megaMenuToggle .megaMenuToggle-icon,
+	#js-mainnav.megamenu #js-megaMenuToggle .megaMenuToggle-icon {
+		display: inline-block;
+		background: rgba(230, 230, 230, 0.7);
+		height: 2px;
+		width: 16px;
+		position: relative;
+		float: right;
+		margin-top: 10px;
+		text-align: left;
+	}
+	
+	#js-mainnav.megamenu.noJS #css3-megaMenuToggle .megaMenuToggle-icon:before,
+	#js-mainnav.megamenu #js-megaMenuToggle .megaMenuToggle-icon:before {
+		content: '';
+		position: absolute;
+		background: rgba(230, 230, 230, 0.8);
+		height: 2px;
+		width: 16px;
+		top: -4px;
+	}
+	
+	#js-mainnav.megamenu.noJS #css3-megaMenuToggle .megaMenuToggle-icon:after,
+	#js-mainnav.megamenu #js-megaMenuToggle .megaMenuToggle-icon:after {
+		content: '';
+		position: absolute;
+		background: rgba(230, 230, 230, 0.9);
+		height: 2px;
+		width: 16px;
+		top: -8px;
+	}
+	
+	#js-mainnav.megamenu {
+		width: 100% !important;
+		overflow: hidden;
+	}
+
+    #js-mainnav.megamenu ul.level0{
+		float:none !important;
+		font-size: 12px;
+    }
+
+    #js-mainnav.megamenu ul.level0 li.mega{
+		float:none !important;
+        position:relative;
+		background-image:none !important;
+    }
+	
+	#js-mainnav.megamenu ul.megamenu li.mega a.mega span.menu-desc {
+		display: none;
+	}
+
+	#js-mainnav.megamenu ul.level1 li.mega span.mega,
+	#js-mainnav.megamenu ul.level1 li.mega a.mega {
+		padding-left:20px !important;
+	}
+
+	#js-mainnav.megamenu ul.level2 li.mega span.mega,
+	#js-mainnav.megamenu ul.level2 li.mega a.mega{
+		padding-left:30px !important;
+	}
+
+	#js-mainnav.megamenu ul.level3 li.mega span.mega,
+	#js-mainnav.megamenu ul.level3 li.mega a.mega{
+		padding-left:40px !important;
+	}
+
+	#js-mainnav.megamenu ul.level4 li.mega span.mega,
+	#js-mainnav.megamenu ul.level4 li.mega a.mega{
+		padding-left:50px !important;
+	}
+
+	#js-mainnav.megamenu ul.level0 li.mega span.mega,
+    #js-mainnav.megamenu ul.level0 li.mega a.mega{
+        padding:15px 10px;
+    }
+
+	#js-mainnav.megamenu .js-megamenu {
+		font-size: 12px;	
+	}
+
+	#js-mainnav.megamenu.megamenu.vertical.right ul.level0 li.mega a.mega {
+		text-align:left !important;
+	}
+
+	#js-mainnav.megamenu.megamenu.vertical.right .js-megamenu ul.level0 li.mega .childcontent {
+		right:0px !important;
+	}
+
+    #js-mainnav.megamenu .js-megamenu li.mega .childcontent {
+		height: 100% !important;
+		margin: 0 !important;
+		position: relative;
+		width: 100% !important;
+		overflow:visible !important;
+	}
+
+	#js-mainnav.megamenu ul.level0 li a.haschild.mega span.menu-title,
+	#js-mainnav.megamenu ul.level0 li a.haschild-over.mega span.menu-title{
+		background:none !important;
+		padding-left:0px !important;
+	}
+
+	#js-mainnav.megamenu ul.level1 li.haschild,
+	#js-mainnav.megamenu ul.level1 li.haschild-over {
+		background: none !important;
+	}
+
+	#js-mainnav.megamenu .childcontent-inner-wrap{
+		margin:0px !important;
+	}
+
+	#js-mainnav.megamenu .childcontent-inner-wrap,
+	#js-mainnav.megamenu .childcontent-inner,
+	#js-mainnav.megamenu .megacol{
+		width:100% !important;
+	}
+
+	#js-mainnav.megamenu ul.megamenu{
+		margin: 0px !important;
+	}
+
+	#js-mainnav.megamenu .megacol,.childcontent-inner{
+		border:none !important;
+		float: none !important;
+	}
+
+	#js-mainnav.megamenu ul.level0 li.haschild span.arrow-icon,
+	#js-mainnav.megamenu ul.level0 li.haschild-over span.arrow-icon {
+		display: block;
+		float: right;
+		position: absolute;
+		right: 2px;
+		top:2px;
+		z-index: 99;
+	}
+
+	#js-mainnav.megamenu ul.level0 li.haschild span.arrow-icon,
+	#js-mainnav.megamenu ul.level0 li.haschild-over span.arrow-icon{
+		display:block;
+		cursor: pointer;
+	}
+
+	#js-mainnav.megamenu ul.level0 li.haschild span.arrow-icon {
+		background: url("../images/arrow_down.png") no-repeat scroll 100% 0px transparent !important;
+		display: block !important;
+		text-indent: 9999px;
+		width: 40px;
+		height: 31px;
+		border: 0 none !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		-webkit-box-shadow: none !important;
+		-moz-box-shadow: none !important;
+		box-shadow: none !important;
+	}
+
+ 	#js-mainnav.megamenu ul.level0 li.haschild-over span.arrow-icon {
+		background: url("../images/close.png") no-repeat scroll 100% 0 transparent;
+		display: block !important;
+		height: 31px;
+		text-indent: 9999px;
+		width: 40px;
+		padding: 0 !important;
+		margin: 0 !important;
+		border: 0 none !important;
+		-webkit-box-shadow: none !important;
+		-moz-box-shadow: none !important;
+		box-shadow: none !important;
+	} 
+
+	#js-mainnav.megamenu ul.level1 li.mega span.arrow-icon{
+		display:none;
+	}
+
+	#js-mainnav.megamenu ul.level1 li.haschild span.arrow-icon,
+	#js-mainnav.megamenu ul.level1 li.haschild-over span.arrow-icon {
+		display: block;
+		float: right;
+		position: absolute;
+		right: 2px;
+		top:2px;
+		z-index: 99;
+	}
+	
+	#js-mainnav.megamenu ul.level0 li.mega.submenu-align-fullwidth {
+		position: relative !important;
+	}
+	
+	/******************************************************************************************/
+	/*                                    CSS3 RESPONSIVE                                     */
+	/******************************************************************************************/
+	/*
+	#js-mainnav.megamenu.noJS #css3-megaMenuToggle {
+		display: block;
+	}
+	
+	#js-mainnav.megamenu.noJS li {
+		display: none;
+	}
+
+	#js-mainnav.megamenu.noJS:hover li {
+		display: block;
+	}
+	
+	#js-mainnav.megamenu.noJS:hover #css3-megaMenuToggle {
+		display: none;
+	}
+	
+	#js-mainnav.noJS ul.megamenu li.haschild > div.childcontent {
+		display: none;
+	}
+	
+	#js-mainnav.noJS ul.megamenu li.haschild:hover > div.childcontent {
+		display: block;
+	}
+ */
+	
+	#js-mainnav.megamenu.noJS ul.megamenu li {
+/*		display: none;*/
+		padding: 0 !important;
+		border: 0 !important;
+		border-radius: 0 !important;
+	}
+	
+	#js-mainnav.megamenu.noJS ul.megamenu li a {
+		position: relative;
+	}
+	
+	#js-mainnav.megamenu.noJS #css3-megaMenuToggle {
+		display: block;
+		border-radius: 5px;
+		padding: 15px;
+	}
+	
+	#js-mainnav.megamenu.noJS:hover #css3-megaMenuToggle {
+		/*display: none;*/
+	}
+	
+	#js-mainnav.megamenu.noJS:hover ul.megamenu li {
+		display: block;
+	}
+	
+	#js-mainnav.megamenu.noJS ul.megamenu li.haschild a.haschild {
+		
+	}
+	
+	#js-mainnav.megamenu.noJS ul.megamenu li.haschild > div.childcontent {
+		display: none;
+	}
+	
+	#js-mainnav.megamenu.noJS ul.megamenu li.haschild:hover > div.childcontent {
+		display: block;
+	}
+	
+	/* CSS 3 arrow down*/
+	#js-mainnav.megamenu.noJS ul.level0 li.mega > a.haschild:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		right: 12px;
+		width: 0;
+		height: 0;
+		border-top: 10px solid #a6a6a6;
+		border-right: 10px solid transparent;
+		border-left: 10px solid transparent;
+	}
+	
+	#js-mainnav.megamenu.noJS ul.level0 li.mega.haschild:hover > a.haschild:after {
+		border-top-color: #fff;
+	}
+}

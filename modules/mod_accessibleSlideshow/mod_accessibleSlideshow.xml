@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension type="module" version="2.5" client="site" method="upgrade">
+	
+	<name>Accessible Slideshow</name>
+	<author>Francesco Zaniol</author>
+	<creationDate>August 2013</creationDate>
+	<authorEmail>info@accessibletemplate.com</authorEmail>
+	<authorUrl>http://www.accessibletemplate.com</authorUrl>
+	<copyright>Copyright (C) 2011-Present Francesco Zaniol</copyright>
+	<license>GNU General Public License version 2 only, European Union Public License v1.1</license>
+	<version>1.0.0</version>
+	<description>
+		&lt;p&gt;Accessible Slideshow - www.accessibletemplate.com&lt;/p&gt;
+	</description>
+
+	<files>
+		<filename module="mod_accessibleSlideshow">mod_accessibleSlideshow.php</filename>
+		<filename>license-info.txt</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+		<folder>css</folder>
+		<folder>modules</folder>
+		<folder>other</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+		
+			<!--GENERAL-->
+			<fieldset name="generalOptions" label="General Options">
+			
+				<!-- Color picker -->
+				<field type="spacer" label="&lt;script src='../modules/mod_accessibleSlideshow/other/jscolor/jscolor.js' type='text/javascript'&gt;&lt;/script&gt;" />
+
+				<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="" />
+				<field name="access-slideshow_slideshow-width" type="text" default="100%" label="Slideshow Width (px or %)" description="Enter width of slideshow. You can enter in px (for example 100px) or in % (for example 80%). Default value is 100%: it will adapt to the container's width." />
+				<field name="access-slideshow_slideshow-height" type="text" default="auto" label="Slideshow Height (px)" description="Height of the slideshow (for example write '100px'). If the value is 'auto' then the slideshow will adapt to the height of the images." />
+				<field name="access-slideshow_text-container-height" type="text" default="auto" label="Text container height (in px)" description="Height of the text container (for example write '100px'). If the value is 'auto' then the container will adapt to the height of the text." />
+				
+				<field name="access-slideshow_text-over-images" type="list" default="true" label="Text over images?" description="If false, the title and the description will NOT be printed over the image">
+					<option value="true">true</option>
+					<option value="false">false</option>
+				</field>				
+
+				<field name="access-slideshow_animation-interval" type="text" default="3000" label="Animation Interval" description="Enter the time (in milliseconds) between each slide" />
+				<field name="access-slideshow_animation-speed" type="text" default="800" label="Animation Speed" description="Enter the time (in milliseconds) for the slide animation" />
+
+				<field name="access-slideshow_enable-dots" type="list" default="true" label="Enable navigation dots?" description="">
+					<option value="true">true</option>
+					<option value="false">false</option>
+				</field>
+
+				<field name="access-slideshow_enable-arrows" type="list" default="false" label="Enable navigation arrows?" description="">
+					<option value="true">true</option>
+					<option value="false">false</option>
+				</field>
+
+				<field name="access-slideshow_linked-titles" type="list" default="false" label="Enable linked titles?" description="If a link is set, the title and the image will have the same link.">
+					<option value="true">true</option>
+					<option value="false">false</option>
+				</field>
+				
+				<field name="access-slideshow_fully-responsive-image" type="list" default="true" label="Fully responsive images?" description="If true, the images will ALWAYS adapt to the container. If false, the image will scale down ONLY.">
+					<option value="true">true</option>
+					<option value="false">false</option>
+				</field>
+				
+			</fieldset>
+
+			<!--ACCESSIBILITY OPTIONS-->
+			<fieldset name="accessibilityOptions" label="Accessibility Options">			
+
+				<field name="access-slideshow_slideshow-heading_is-enabled" type="list" default="true" label="Enable an hidden slideshow heading?" description="This heading describes the slideshow. It will be visible only to screen readers.">
+					<option value="true">true</option>
+					<option value="false">false</option>
+				</field>
+
+				<field name="access-slideshow_slideshow-heading_level" type="list" default="h3" label="Hidden heading level?" description="Select the heading level for the hidden heading">
+					<option value="p">&lt;p&gt; (no heading)</option>
+					<option value="h1">&lt;h1&gt;</option>
+					<option value="h2">&lt;h2&gt;</option>
+					<option value="h3">&lt;h3&gt;</option>
+					<option value="h4">&lt;h4&gt;</option>
+					<option value="h5">&lt;h5&gt;</option>
+					<option value="h6">&lt;h6&gt;</option>
+				</field>
+				<field name="access-slideshow_slides-heading_level" type="list" default="h4" label="Slides title level?" description="Select the heading level of each slide title">
+					<option value="p">&lt;p&gt; (no heading)</option>
+					<option value="h1">&lt;h1&gt;</option>
+					<option value="h2">&lt;h2&gt;</option>
+					<option value="h3">&lt;h3&gt;</option>
+					<option value="h4">&lt;h4&gt;</option>
+					<option value="h5">&lt;h5&gt;</option>
+					<option value="h6">&lt;h6&gt;</option>
+				</field>
+			</fieldset>				
+				
+
+			<!--COLORS-->
+			<fieldset name="colorsOptions" label="Style &amp; Colors">
+				<field name="access-slideshow_dots-color-1" class="color" type="text" default="000000" label="Slideshow dots color, external" description="" />
+				<field name="access-slideshow_dots-color-2" class="color" type="text" default="FFFFFF" label="Slideshow dots color, internal" description="" />
+<!--				<field name="access-slideshow_dots_size" type="text" default="1" label="Slideshow dots size (only in em)" description="Please, DO NOT write '1em', just write '1'" />-->
+				<field name="access-slideshow_arrows-color-1" class="color" type="text" default="000000" label="Slideshow arrows color, external" description="" />
+				<field name="access-slideshow_arrows-color-2" class="color" type="text" default="FFFFFF" label="Slideshow arrows color, internal" description="" />
+<!--				<field name="access-slideshow_arrows_size" type="text" default="2em" label="Slideshow arrows size (em or px)" description="Please, DO NOT write '1em', just write '1'" />-->
+				<field name="access-slideshow_text-background-color" class="color" type="text" default="000000" label="Text container background color" description="" />
+				<field name="access-slideshow_titles-color" class="color" type="text" default="FFFFFF" label="Titles color" description="" />
+				<field name="access-slideshow_description-color" class="color" type="text" default="DDDDDD" label="Descriptions color" description="" />
+				<field name="access-slideshow_titles-font-size" type="text" default="1.2em" label="Titles font size (px or em)" description="Write for example: 12px or 1.2em" />
+				<field name="access-slideshow_description-font-size" type="text" default="1em" label="Descriptions font size (px or em)" description="Write for example: 10px or 1em" />
+			</fieldset>				
+
+			<!--SLIDES DEFINITION-->
+			<fieldset name="slidesOptions" label="Slides definition">
+				
+				<field type="spacer" name="&lt;strong style=&apos;color:#F00&apos;&gt;*IMPORTANT:&lt;/strong&gt;&lt;br /&gt;To define a new slide you need to:&lt;br /&gt;- Define an &lt;strong&gt;image path&lt;/strong&gt;&lt;br /&gt;- Define a &lt;strong&gt;title&lt;/strong&gt;" />
+								
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 1&lt;/strong&gt;" />				
+				<!--IMAGE 1-->
+							<field name="access-slideshow_slide-1-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-1-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-1-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-1-title" type="text" default="" label="Slide 1 title*" description="" />
+							<field name="access-slideshow_slide-1-description" type="textarea" rows="8" cols="30" default="" label="Slide 1 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-1-link" type="text" default="" label="Slide 1 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 1-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 2&lt;/strong&gt;" />
+				<!--IMAGE 2-->
+							<field name="access-slideshow_slide-2-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-2-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-2-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-2-title" type="text" default="" label="Slide 2 title*" description="" />
+							<field name="access-slideshow_slide-2-description" type="textarea" rows="8" cols="30" default="" label="Slide 2 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-2-link" type="text" default="" label="Slide 2 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 2-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 3&lt;/strong&gt;" />
+				<!--IMAGE 3-->
+							<field name="access-slideshow_slide-3-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-3-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-3-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-3-title" type="text" default="" label="Slide 3 title*" description="" />
+							<field name="access-slideshow_slide-3-description" type="textarea" rows="8" cols="30" default="" label="Slide 3 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-3-link" type="text" default="" label="Slide 3 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 3-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 4&lt;/strong&gt;" />
+				<!--IMAGE 4-->
+							<field name="access-slideshow_slide-4-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-4-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-4-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-4-title" type="text" default="" label="Slide 4 title*" description="" />
+							<field name="access-slideshow_slide-4-description" type="textarea" rows="8" cols="30" default="" label="Slide 4 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-4-link" type="text" default="" label="Slide 4 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 4-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 5&lt;/strong&gt;" />
+				<!--IMAGE 5-->
+							<field name="access-slideshow_slide-5-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-5-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-5-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-5-title" type="text" default="" label="Slide 5 title*" description="" />
+							<field name="access-slideshow_slide-5-description" type="textarea" rows="8" cols="30" default="" label="Slide 5 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-5-link" type="text" default="" label="Slide 5 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 5-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 6&lt;/strong&gt;" />
+				<!--IMAGE 6-->
+							<field name="access-slideshow_slide-6-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-6-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-6-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-6-title" type="text" default="" label="Slide 6 title*" description="" />
+							<field name="access-slideshow_slide-6-description" type="textarea" rows="8" cols="30" default="" label="Slide 6 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-6-link" type="text" default="" label="Slide 6 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 6-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 7&lt;/strong&gt;" />
+				<!--IMAGE 7-->
+							<field name="access-slideshow_slide-7-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-7-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-7-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-7-title" type="text" default="" label="Slide 7 title*" description="" />
+							<field name="access-slideshow_slide-7-description" type="textarea" rows="8" cols="30" default="" label="Slide 7 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-7-link" type="text" default="" label="Slide 7 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 7-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 8&lt;/strong&gt;" />
+				<!--IMAGE 8-->
+							<field name="access-slideshow_slide-8-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-8-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-8-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-8-title" type="text" default="" label="Slide 8 title*" description="" />
+							<field name="access-slideshow_slide-8-description" type="textarea" rows="8" cols="30" default="" label="Slide 8 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-8-link" type="text" default="" label="Slide 8 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 8-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 9&lt;/strong&gt;" />
+				<!--IMAGE 9-->
+							<field name="access-slideshow_slide-9-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-9-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-9-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-9-title" type="text" default="" label="Slide 9 title*" description="" />
+							<field name="access-slideshow_slide-9-description" type="textarea" rows="8" cols="30" default="" label="Slide 9 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-9-link" type="text" default="" label="Slide 9 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 9-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 10&lt;/strong&gt;" />
+				<!--IMAGE 10-->
+							<field name="access-slideshow_slide-10-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-10-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-10-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-10-title" type="text" default="" label="Slide 10 title*" description="" />
+							<field name="access-slideshow_slide-10-description" type="textarea" rows="8" cols="30" default="" label="Slide 10 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-10-link" type="text" default="" label="Slide 10 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 10-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 11&lt;/strong&gt;" />
+				<!--IMAGE 11-->
+							<field name="access-slideshow_slide-11-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-11-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-11-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-11-title" type="text" default="" label="Slide 11 title*" description="" />
+							<field name="access-slideshow_slide-11-description" type="textarea" rows="8" cols="30" default="" label="Slide 11 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-11-link" type="text" default="" label="Slide 11 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 11-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 12&lt;/strong&gt;" />
+				<!--IMAGE 12-->
+							<field name="access-slideshow_slide-12-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-12-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-12-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-12-title" type="text" default="" label="Slide 12 title*" description="" />
+							<field name="access-slideshow_slide-12-description" type="textarea" rows="8" cols="30" default="" label="Slide 12 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-12-link" type="text" default="" label="Slide 12 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 12-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 13&lt;/strong&gt;" />
+				<!--IMAGE 13-->
+							<field name="access-slideshow_slide-13-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-13-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-13-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-13-title" type="text" default="" label="Slide 13 title*" description="" />
+							<field name="access-slideshow_slide-13-description" type="textarea" rows="8" cols="30" default="" label="Slide 13 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-13-link" type="text" default="" label="Slide 13 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 13-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 14&lt;/strong&gt;" />
+				<!--IMAGE 14-->
+							<field name="access-slideshow_slide-14-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-14-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-14-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-14-title" type="text" default="" label="Slide 14 title*" description="" />
+							<field name="access-slideshow_slide-14-description" type="textarea" rows="8" cols="30" default="" label="Slide 14 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-14-link" type="text" default="" label="Slide 14 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 14-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 15&lt;/strong&gt;" />
+				<!--IMAGE 15-->
+							<field name="access-slideshow_slide-15-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-15-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-15-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-15-title" type="text" default="" label="Slide 15 title*" description="" />
+							<field name="access-slideshow_slide-15-description" type="textarea" rows="8" cols="30" default="" label="Slide 15 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-15-link" type="text" default="" label="Slide 15 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 15-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 16&lt;/strong&gt;" />
+				<!--IMAGE 16-->
+							<field name="access-slideshow_slide-16-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-16-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-16-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-16-title" type="text" default="" label="Slide 16 title*" description="" />
+							<field name="access-slideshow_slide-16-description" type="textarea" rows="8" cols="30" default="" label="Slide 16 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-16-link" type="text" default="" label="Slide 16 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 16-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 17&lt;/strong&gt;" />
+				<!--IMAGE 17-->
+							<field name="access-slideshow_slide-17-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-17-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-17-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-17-title" type="text" default="" label="Slide 17 title*" description="" />
+							<field name="access-slideshow_slide-17-description" type="textarea" rows="8" cols="30" default="" label="Slide 17 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-17-link" type="text" default="" label="Slide 17 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 17-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 18&lt;/strong&gt;" />
+				<!--IMAGE 18-->
+							<field name="access-slideshow_slide-18-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-18-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-18-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-18-title" type="text" default="" label="Slide 18 title*" description="" />
+							<field name="access-slideshow_slide-18-description" type="textarea" rows="8" cols="30" default="" label="Slide 18 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-18-link" type="text" default="" label="Slide 18 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 18-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 19&lt;/strong&gt;" />
+				<!--IMAGE 19-->
+							<field name="access-slideshow_slide-19-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-19-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-19-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-19-title" type="text" default="" label="Slide 19 title*" description="" />
+							<field name="access-slideshow_slide-19-description" type="textarea" rows="8" cols="30" default="" label="Slide 19 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-19-link" type="text" default="" label="Slide 19 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 19-->
+				
+				<field type="spacer" name="&lt;br /&gt;&lt;strong&gt;Slide 20&lt;/strong&gt;" />
+				<!--IMAGE 20-->
+							<field name="access-slideshow_slide-20-image-path" type="media" default="" label="Slide 1 image path*" description="Load here your image" />
+							<field name="access-slideshow_slide-20-image-alt" type="text" default="" label="ALT attribute" description="This attribute is important for the screenreaders, give a description of the image here or write any important content contained in the image." />
+							<field name="access-slideshow_slide-20-text-visible" type="list" default="true" label="Show the slide text? (title and description)" description="If set to false, the title and the description will be hidden (but visible to screen reader users)">
+								<option value="true">true</option>
+								<option value="false">false</option>
+							</field>
+							<field name="access-slideshow_slide-20-title" type="text" default="" label="Slide 20 title*" description="" />
+							<field name="access-slideshow_slide-20-description" type="textarea" rows="8" cols="30" default="" label="Slide 20 description" description="Enter a text here. Note that you can also add HTML code" />
+							<field name="access-slideshow_slide-20-link" type="text" default="" label="Slide 20 link" description="Write here the slide link (for example http://www.google.it)" />
+				<!--End IMAGE 20-->
+			</fieldset>
+		</fields>
+	</config>
+</extension>

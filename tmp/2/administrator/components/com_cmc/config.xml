@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset name="main" label="COM_CMC_MAIN_SETTINGS"
+              description="COM_CMC_MAIN_SETTINGS_DESC" addfieldpath="/administrator/components/com_cmc/models/fields/">
+        <field
+                name="api_key"
+                type="text" default=""
+                label="COM_CMC_API_KEY"
+                description="COM_CMC_API_KEY_DESC"
+                size="60"
+                required="true"
+                />
+        <field
+                name="webhooks_key"
+                type="webhook" default=""
+                label="COM_CMC_WEBHOOKS_URL"
+                description="COM_CMC_WEBHOOKS_URL_DESC"
+                size="60"
+                required="true"
+                />
+
+    </fieldset>
+
+    <fieldset name="update" label="COM_CMC_FIELDSET_UPDATE_LABEL"
+              description="COM_CMC_FIELDSET_UPDATE_DESC"  addfieldpath="/libraries/compojoom/form/fields">
+        <field name="library_load" type="loadcompojoom"
+               hidden="true" extension="com_hotspots" />
+        <field name="update_stats" label="LIB_COMPOJOOM_UPDATE_STATS_LABEL"
+               description="LIB_COMPOJOOM_UPDATE_STATS_DESC"
+
+               class="btn-group" type="radio" default="1">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+    </fieldset>
+
+    <fieldset
+            name="permissions"
+            label="JCONFIG_PERMISSIONS_LABEL"
+            description="COM_CMC_PERMISSIONS_DESC"
+            >
+
+        <field
+                name="rules"
+                type="rules"
+                label="JCONFIG_PERMISSIONS_LABEL"
+                class="inputbox"
+                validate="rules"
+                filter="rules"
+                component="com_cmc" section="component"/>
+    </fieldset>
+</config>

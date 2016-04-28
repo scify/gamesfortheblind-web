@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<extension
+		type="module"
+		version="2.5.0"
+		client="site"
+		method="upgrade">
+	<name>Stick on Scroll</name>
+	<author>http://www.pluginvalley.com</author>
+	<creationDate>December 2013</creationDate>
+	<copyright>http://www.pluginvalley.com</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>pluginvalley@ymail.com</authorEmail>
+	<authorUrl>http://www.pluginvalley.com</authorUrl>
+	<version>1.0.1</version>
+	<description>
+<![CDATA[
+<span style="font-size:21px; color:#92D900">Stick on Scroll Module by PluginValley</span>
+<br /><br />
+Cool Plugins For Cool Websites!  <br /> <br />
+If you have any questions please never hesitate to use PluginValley Forum for Support!<br /><br />
+<a href="http://www.pluginvalley.com" style="font-size:15px;" target="_blank">Visit PluginValley for the Latest Works!
+<div style="text-align:left; margin-top:10px;"><img src="../modules/mod_stickonscroll/assets/images/logo.jpg"></div>
+</a>
+<p>
+]]>	
+	</description>
+	<files>
+			<filename module="mod_stickonscroll">mod_stickonscroll.php</filename>
+			<filename>index.html</filename>
+			<filename>helper.php</filename>
+			<folder>assets</folder>
+			<folder>tmpl</folder>					
+	</files>
+	<languages>
+			<language tag="en-GB">en-GB.mod_stickonscroll.ini</language>
+			<language tag="en-GB">en-GB.mod_stickonscroll.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+		<fieldset name="basic" label="MOD_STICKONSCROLL_FIELDSETLABEL_BASICSETTINGS">
+				<field name="usejq" type="list" default="1" label="MOD_STICKONSCROLL_FIELD_JQUERYLOAD" description="MOD_STICKONSCROLL_FIELD_JQUERYLOAD_DESC">
+					<option value="1">MOD_STICKONSCROLL_YES</option>
+					<option value="0">MOD_STICKONSCROLL_NO</option>
+				</field>
+		</fieldset>
+		<fieldset name="tbar" label="MOD_STICKONSCROLL_FIELDSETLABEL_TBARSETTINGS">
+				<field name="tbarid" type="text" size="20" default="mystickydiv" label="MOD_STICKONSCROLL_FIELD_CONTAINERID" description="MOD_STICKONSCROLL_FIELD_CONTAINERID_DESC" />
+				<field name="topspacing" type="text" size="20" default="0" label="MOD_STICKONSCROLL_FIELD_TOPSPACING" description="MOD_STICKONSCROLL_FIELD_TOPSPACING_DESC" />
+				<field name="tbarcss" type="textarea" rows="6" cols="40" default="background: none repeat scroll 0 0 #0C1A3E; color: #FFFFFF; height: 30px; margin: 0 10px !important; min-height: 20px; padding: 15px 15px 15px 0; width: 1015px; z-index: 100000;" label="MOD_STICKONSCROLL_FIELD_TBARCSS" description="MOD_STICKONSCROLL_FIELD_TBARCSS_DESC" />
+		</fieldset>
+		<fieldset name="tbarcont" label="MOD_STICKONSCROLL_FIELDSETLABEL_TBARCONTSETTINGS">
+		<field name="tbarcontent" type="textarea" default="&lt;span class=&quot;promocode1&quot;&gt;AUTUMN PROMO 25%0FF!&lt;/span&gt; &lt;span class=&quot;promocode2&quot;&gt; UNTIL 1ST NOVEMBER! &lt;/span&gt;&lt;span class=&quot;promocode3&quot;&gt;PROMO CODE :&lt;/span&gt; &lt;span class=&quot;promocode4&quot;&gt;VAL25&lt;/span&gt;" label="MOD_STICKONSCROLL_FIELD_TBARCONTENT" description="MOD_STICKONSCROLL_FIELD_TBARCONTENT_DESC" rows="20" cols="40" filter="safehtml"/>
+		</fieldset>
+			<!-- advanced settings -->
+			<fieldset name="advanced">
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" escription="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field name="cachemode" type="hidden" default="static">
+					<option value="static"></option>
+				</field>
+			</fieldset>
+			<!-- end of advanced setting -->
+		</fields>
+	</config>
+</extension>

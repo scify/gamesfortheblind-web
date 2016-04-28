@@ -1,0 +1,38 @@
+.floating_bar {
+    border-radius: 0 0 5px 5px;
+    margin: 0 auto;
+    position: fixed;
+    text-align: center;
+    text-decoration: blink;
+    z-index: 10000;
+}
+.promocode1 {
+    background: url("../images/gift.png") no-repeat scroll 10px 0 transparent;
+    color: #B6F925;
+    font-size: 26px;
+    font-weight: bold;
+    padding-left: 45px;
+}
+.promocode2 {
+    color: #FFFFFF;
+    font-size: 26px;
+    font-weight: bold;
+}
+.promocode3 {
+    color: #FFFFFF;
+    font-size: 26px;
+    font-weight: bold;
+}
+.promocode4 {
+    color: #EEB21C;
+    font-size: 26px;
+    font-weight: bold;
+}
+#closefbar{
+padding-left:50px;
+font-size:13px;
+font-weight:bold;
+color:#000;
+cursor:pointer;
+text-decoration:underline;
+}

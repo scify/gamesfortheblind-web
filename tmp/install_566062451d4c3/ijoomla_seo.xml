@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>COM_IJOOMLA_SEO</name>	
+	<creationDate>October 06, 2015</creationDate>
+	<author>iJoomla</author>
+	<authorEmail>webmaster@ijoomla.com</authorEmail>
+	<authorUrl>www.ijoomla.com</authorUrl>
+	<copyright>iJoomla.com</copyright>	
+	<version>3.1.13</version>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>iJoomla SEO allows you to easily SEO your Joomla site and monitor your keywords on Google.</description>		
+	
+	<scriptfile>install_uninstall.php</scriptfile>
+	
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>ijoomla_seo.php</filename>	
+	</files>
+	
+	<administration>		
+		<menu img="components/com_ijoomla_seo/images/ijseo_small_logo.png">COM_IJOOMLA_SEO</menu>		
+		<files folder="admin">			
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>index.html</filename>
+			<filename>controller.php</filename>
+			<filename>ijoomla_seo.php</filename>
+			<filename>left.php</filename>
+			<folder>plugins</folder>
+			<folder>controllers</folder>
+			<folder>javascript</folder>			
+			<folder>css</folder>
+			<folder>helpers</folder>
+			<folder>images</folder>
+			<folder>models</folder>
+			<folder>tables</folder>								
+			<folder>views</folder>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/en-GB.com_ijoomla_seo.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_ijoomla_seo.sys.ini</language>
+		</languages>
+	</administration>						
+</extension>
+

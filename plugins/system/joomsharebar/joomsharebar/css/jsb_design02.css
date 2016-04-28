@@ -1,0 +1,65 @@
+/* Design 02 CSS JoomShareBar Copyright Roy Haanen */
+
+.design02{
+    color:#FFF;
+}
+
+a.design01,a.design02{
+    /*-moz-box-shadow: 1px 1px 1px 1px #a8a8a8;
+    -webkit-box-shadow: 1px 1px 1px 1px #a8a8a8;
+    box-shadow: 1px 1px 1px 0px #a8a8a8;*/
+    border: 1px  solid #777;
+    border-color: rgba(0,0,0,0.2);
+    border-bottom-color: #333;
+    border-bottom-color: rgba(0,0,0,0.4);
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Lucida Grande", Tahoma, sans-serif;
+    padding: 0 .75em 0 0;
+    text-align: left;
+    text-decoration: none!important;
+    /*text-shadow: 0 1px 0 rgba(0,0,0,0.5);*/
+    white-space: nowrap;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+    height:2.5em;
+    line-height:2.5em;
+    -webkit-border-top-left-radius:3px;
+    -moz-border-radius-topleft:3px;
+    border-top-left-radius:3px;
+    -webkit-border-top-right-radius:3px;
+    -moz-border-radius-topright:3px;
+    border-top-right-radius:3px;
+    -webkit-border-bottom-right-radius:4px;
+    -moz-border-radius-bottomright:4px;
+    border-bottom-right-radius:4px;
+    -webkit-border-bottom-left-radius:4px;
+    -moz-border-radius-bottomleft:4px;
+    border-bottom-left-radius:4px;
+    text-indent:0;
+}
+
+.design02:before{
+    color:#FFF;
+}
+
+.design01:before,.design02:before {
+    content: "";
+    font: 120%/1.65 zocial;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0 0.5em 0 0;
+    padding: 0.25em 0.5em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    -moz-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    border:none;
+    float: left;
+    width: 1.3em;
+}
+

@@ -1,0 +1,101 @@
+/**
+ * @version		$Id$
+ * @author		JoomlaUX!
+ * @package		Joomla.Site
+ * @subpackage	mod_jux_megamenu
+ * @copyright	Copyright (C) 2008 - 2013 by JoomlaUX. All rights reserved.
+ * @license		http://www.gnu.org/licenses/gpl.html GNU/GPL version 3
+*/
+
+#js-mainnav.megamenu.darkblue {
+	background: #014E72 url('../../images/grad1-mask.png') repeat-x top; /* you can change/delete the transparent gradient image or the background color */
+}
+
+
+#js-mainnav.megamenu.darkblue #js-megaMenuToggle {
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+
+/* lv - 0
+-----------------------------------*/
+/* Styling ---*/
+#js-mainnav.megamenu.darkblue ul.level0 li.megacss span.megacss,
+#js-mainnav.megamenu.darkblue ul.level0 li.megacss a.megacss,
+#js-mainnav.megamenu.darkblue .megaMenuToggle {
+    color: #fff;
+	padding: 10px 5px 12px 6px;
+}
+
+
+
+#js-mainnav.megamenu.dèault ul.level1 li:hover,
+#js-mainnav.megamenu.darkblue ul.level1 li.over,
+#js-mainnav.megamenu.darkblue ul.level1 li.haschild-over { background-color: #006699; }
+
+
+#js-mainnav.megamenu.darkblue ul.level1 li.haschild,
+#js-mainnav.megamenu.darkblue ul.level1 li.haschild-over {
+	background-image: url(../../images/arrow.png);
+	background-repeat: no-repeat;
+	background-position: 95% center;
+}
+
+/* CHILD CONTENT
+-----------------------------------*/
+
+#js-mainnav.megamenu.darkblue .childcontent-inner {
+	background-color: #002A40; /*change here the color to match the new color you have set for mainnav */
+	color: #fff;
+}
+
+#js-mainnav.megamenu.darkblue .childcontent-inner .group ul li.active {
+	background-color: #00527C !important;
+}
+
+#js-mainnav.megamenu.darkblue .childcontent .group h3 {
+	background: none;
+	color: #fff;
+}
+
+
+#js-mainnav.megamenu.darkblue .childcontent .moduletable { color: #fff; }
+
+#js-mainnav.megamenu.darkblue .childcontent .js-moduletable a:hover,
+#js-mainnav.megamenu.darkblue .childcontent .js-moduletable a:focus,
+#js-mainnav.megamenu.darkblue .childcontent .js-moduletable a:active {
+	color: #fff;
+	text-decoration: none;
+}
+
+#js-mainnav.megamenu.darkblue .group-title .menu-title {
+	color: #fff;
+}
+
+#js-mainnav.megamenu.darkblue .group-title .menu-desc {
+	color: #999;
+}
+
+/* Left alignment */
+#js-mainnav.megamenu.darkblue ul.level0 li.megacss.submenu-align-left > .childcontent {
+	margin-left: 1px!important;
+}
+#megamenucss .darkblue.megamenu ul.level0 > li.megacss:hover > a.megacss,
+#megamenucss #js-mainnav.megamenu.darkblue ul.level0 li.active
+{
+    background: #02374F!important;
+    color: #ffffff!important;
+}#megamenucss .darkblue .megamenu .dropdown-menu ul.level1 li.megacss:hover>a.megacss,#megamenucss .darkblue .dropdown-menu ul.level1 li.megacss a.megacss:hover{
+    background: #b8b8b8!important;
+    color: #ffffff!important;
+}
+#megamenucss #js-mainnav.darkblue .js-megamenu{
+	background: #014E72!important;
+}
+#js-mainnav.megamenu.darkblue ul.level0 li.megacss span.megacss,
+#js-mainnav.megamenu.darkblue ul.level0 li.megacss a.megacss,
+#js-mainnav.megamenu.darkblue .megaMenuToggle {
+    color: #fff;
+	padding: 10px 5px 12px 6px;
+}

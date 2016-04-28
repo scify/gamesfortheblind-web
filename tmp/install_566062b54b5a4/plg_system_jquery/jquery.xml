@@ -1,0 +1,64 @@
+<extension type="plugin" version="1.7.0" method="upgrade" group="system">
+	<name>plg_system_jquery</name>
+	<version>1.5.0</version>
+	<description>PLG_JQUERY_XML_DESCRIPTION</description>
+	<license>GNU/GPL 2.0 (http://www.gnu.org/licenses/gpl-2.0.html) or MIT license (http://www.opensource.org/licenses/mit-license.php)</license>
+	<author>Elovaris Applications</author>
+	<authorEmail>support@configbox.at</authorEmail>
+	<authorUrl>http://www.configbox.at</authorUrl>
+	<copyright>Copyright (C) 2009-2011 Martin Rasser</copyright>
+    <creationDate>2012-02-15</creationDate>
+    <files folder="site">
+        <filename plugin="jquery">jquery.php</filename>
+        <folder plugin="jquery">jquery</folder>
+    </files>
+    <files folder="admin">
+		<folder plugin="jquery">language</folder>
+	</files>
+	<languages folder="admin/language">
+		<language tag="en-GB">en-GB/en-GB.plg_system_jquery.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_jquery.sys.ini</language>
+		<language tag="de-DE">de-DE/de-DE.plg_system_jquery.ini</language>
+		<language tag="de-DE">de-DE/de-DE.plg_system_jquery.sys.ini</language>
+	</languages>
+    <params>
+        <param name="version" type="list" default="1.8.3" label="PLG_JQUERY_VERSION_LABEL" description="PLG_JQUERY_VERSION_DESC">
+        	<option value="1.4.4">1.4.4</option>
+        	<option value="1.5.2">1.5.2</option>
+        	<option value="1.6.4">1.6.4</option>
+        	<option value="1.7.2">1.7.2</option>			
+        	<option value="1.8.3">1.8.3</option>			
+        	<option value="1.9.0">1.9.0</option>
+        	<option value="1.9.1">1.9.1</option>
+        	<option value="1.10.1">1.10.1</option>
+        	<option value="1.11.0">1.11.0</option>	
+        </param>
+    
+		<param name="optimized" type="radio" default="0" label="PLG_JQUERY_OPTIMIZED_LABEL" description="PLG_JQUERY_OPTIMIZED_DESC">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</param>
+	</params>	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="version" type="list" default="1.8.3" label="PLG_JQUERY_VERSION_LABEL" description="PLG_JQUERY_VERSION_DESC">
+		        	<option value="1.4.4">1.4.4</option>
+        			<option value="1.5.2">1.5.2</option>
+        			<option value="1.6.4">1.6.4</option>
+        			<option value="1.7.2">1.7.2</option>			
+        			<option value="1.8.3">1.8.3</option>			
+        			<option value="1.9.0">1.9.0</option>
+        			<option value="1.9.1">1.9.1</option>
+        			<option value="1.10.1">1.10.1</option>
+        			<option value="1.11.0">1.11.0</option>
+		        </field>
+		    
+				<field name="optimized" type="radio" default="0" label="PLG_JQUERY_OPTIMIZED_LABEL" description="PLG_JQUERY_OPTIMIZED_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>	
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,125 @@
+/**
+ * @package   Zhong - accessibletemplate
+ * @version   2.2.0
+ * @author    Francesco Zaniol, accessibletemplate - http://www.accessibletemplate.com
+ * @copyright Copyright (C) 2011-Present Francesco Zaniol
+ * @license   accessibletemplate Terms & Conditions - http://www.accessibletemplate.com/en/terms-and-conditions
+ **/
+/*
+ * This CSS defines some css3 effects
+ * CSS3 effects are activated only in "mobile-layout" AND in "default layout" if "graphic mode" is set to "default" OR "night-mode"
+ */
+
+/*-------------------------
+-  COLOR TRANSITIONS
+------------------------ */
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a,
+button,.button,input[type=button],
+input,textarea,select,
+.accessibility-module a,
+.menu-container ul a,
+#goto-top-block a,
+.grey-button-style,
+.white-button-style,
+.green-button-style,
+.red-button-style,
+.yellow-button-style,
+.violet-button-style,
+.blue-button-style,
+.black-button-style{
+	-webkit-transition:color .2s linear, background-color .2s linear 0s, border-color .2s linear 0s;
+	transition:color .2s linear, background-color .2s linear 0s, border-color .2s linear 0s;
+	-moz-transition:color .2s linear, background-color .2s linear 0s, border-color .2s linear 0s;
+	}
+
+/*-------------------------
+-  CSS3 SNIPPETS
+------------------------ */
+
+/* CSS3 Transition (All)
+--------------------------- */
+.css3-transition,
+.css3-transition *{
+	-webkit-transition: all 0.3s ease-out;  /* Saf3.2+, Chrome */
+     -moz-transition: all 0.3s ease-out;  /* FF4+ */
+      -ms-transition: all 0.3s ease-out;  /* IE10 */
+       -o-transition: all 0.3s ease-out;  /* Opera 10.5+ */
+          transition: all 0.3s ease-out;
+	}
+
+/* Drop shadows
+--------------------------- */
+.black-shadow{
+	-moz-box-shadow:0.16em 0.14em 0.4em #333;
+	-webkit-box-shadow:0.16em 0.14em 0.4em #333;
+	box-shadow:0.16em 0.14em 0.4em #333;
+	}
+.grey-shadow{
+	-moz-box-shadow:0.16em 0.14em 0.4em #999;
+	-webkit-box-shadow:0.16em 0.14em 0.4em #999;
+	box-shadow:0.16em 0.14em 0.4em #999;
+	}
+.white-shadow{
+	-moz-box-shadow:0.16em 0.14em 0.4em #EEE;
+	-webkit-box-shadow:0.16em 0.14em 0.4em #EEE;
+	box-shadow:0.16em 0.14em 0.4em #EEE;
+	}
+
+
+/*-------------------------
+-  LAYOUT ELEMENTS
+------------------------ */
+
+/* MENUS
+--------------------------- */
+/* Fade effect */
+.main-menu-style_verticalFloating #header #main-menu-container ul ul,
+.main-menu-style_horizontalFloating #header #main-menu-container ul ul,
+.side-menu-style_floating #main-body .menu-container ul ul{
+	opacity:0;
+	-webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+	transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+	-moz-transition:visibility 0s linear 0.3s, opacity 0.3s linear;
+	-o-transition:visibility 0s linear 0.3s, opacity 0.3s linear;
+	}
+.main-menu-style_verticalFloating #header #main-menu-container ul ul:hover,
+.main-menu-style_verticalFloating #header #main-menu-container ul li:hover>ul,
+.main-menu-style_horizontalFloating #header #main-menu-container ul ul:hover,
+.main-menu-style_horizontalFloating #header #main-menu-container ul li:hover>ul,
+.side-menu-style_floating #main-body .menu-container ul ul:hover,
+.side-menu-style_floating #main-body .menu-container ul li:hover>ul,
+.main-menu-style_verticalFloating #header #main-menu-container ul ul.visible-floating-menu,
+.main-menu-style_horizontalFloating #header #main-menu-container ul ul.visible-floating-menu,
+.side-menu-style_floating #main-body .menu-container ul ul.visible-floating-menu{
+	opacity:1;
+	-webkit-transition-delay:0s;
+	-moz-transition-delay:0s;
+	-o-transition-delay:0s;
+	transition-delay:0s;
+	}
+
+/* "Preference" Tooltip
+--------------------------- */
+.default-graphic-mode #top-bar-preferences-message-inner{
+	background-image:-moz-linear-gradient(top, #FFFDCC, #FFFCBB); /* FF3.6 */
+	background-image:-ms-linear-gradient(top, #FFFDCC, #FFFCBB); /* IE10 */
+	background-image:-o-linear-gradient(top, #FFFDCC, #FFFCBB); /* Opera 11.10+ */
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#FFFDCC), to(#FFFCBB)); /* Saf4+, Chrome */
+	background-image:-webkit-linear-gradient(top, #FFFDCC, #FFFCBB); /* Chrome 10+, Saf5.1+ */
+	background-image:linear-gradient(to bottom, #FFFDCC, #FFFCBB);
+	}
+
+/* "Jump to content" anchor
+--------------------------- */
+a#jump-to-content{
+	visibility:visible;
+	opacity:0;
+	-webkit-transition:opacity .3s linear;
+	transition:opacity .3s linear;
+	-moz-transition:opacity .3s linear;
+	}
+a#jump-to-content:focus{opacity:1;}
+
+/*==========================================================================
+   ADD YOUR PERSONAL STYLE HERE:
+==========================================================================*/

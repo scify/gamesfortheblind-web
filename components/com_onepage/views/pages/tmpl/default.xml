@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: metadata.xml $ -->
+<metadata>
+	<layout title="com_onepage_pages_view_default_title" option="com_onepage_pages_view_default_option">
+		<message>
+			<![CDATA[com_onepage_pages_view_default_desc]]>
+		</message>
+	</layout>
+    
+<fields name="params">
+
+    <fields name="request">
+        <fieldset name="request" addfieldpath="/administrator/components/com_onepage/models/fields"
+        >
+        <field name="onepage_id" type="onepagecustomonepageid"
+            label="COM_ONEPAGE_FIELD_ONEPAGE_ID_LABEL" 
+            description ="COM_ONEPAGE_FIELD_ONEPAGE_ID_DESC" required="true" 
+             />
+        </fieldset>
+    </fields>
+
+    <fieldset name="advanced" label="JGLOBAL_LIST_LAYOUT_OPTIONS">
+
+            <field name="show_menu" type="list"
+                description="COM_ONEPAGE_DISPLAY_MENU_LABEL"
+                label="COM_ONEPAGE_DISPLAY_MENU_DESC"
+                                default="1"
+            >
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
+            </field>     
+            <field name="menu_mode" type="list" default="horizontal"
+                label="COM_ONEPAGE_LAYOUT_MENU_SHOW_LABEL" 
+                description="COM_ONEPAGE_LAYOUT_MENU_SHOW_DESC">
+                <option value="horizontal">COM_ONEPAGE_LAYOUT_MENU_SHOW_HORIZONTAL</option>
+                <option value="vertical">COM_ONEPAGE_LAYOUT_MENU_SHOW_VERTICAL</option>
+            </field>                          
+
+    </fieldset>
+
+</fields>    
+</metadata>

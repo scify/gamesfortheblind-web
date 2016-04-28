@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="system">
+	<name>iJoomla News</name>
+	<author>iJoomla</author>
+	<creationDate>14 March 2013</creationDate>
+	<copyright>Commercial License</copyright>	
+	<authorEmail>webmaster2@ijoomla.com</authorEmail>
+	<authorUrl>www.iJoomla.com</authorUrl>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>1.0.0</version>
+	<description></description>
+	<files>
+		<filename plugin="ijoomlanews">ijoomlanews.php</filename>
+		<folder>ijoomlanews</folder>
+	</files>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="nr_articles" type="text" description="Number of articles to show on news tabs." label="Numbers of articles:" default="3"></field>
+				<field name="text_length" type="text" description="Number characters for articles introtext." label="Max characters:" default="100"></field>
+				<field name="image_width" type="text" description="Width for articles image." label="Image width:" default="50"></field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

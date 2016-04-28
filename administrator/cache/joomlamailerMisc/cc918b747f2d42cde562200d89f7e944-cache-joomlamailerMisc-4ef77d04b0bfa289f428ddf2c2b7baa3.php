@@ -1,0 +1,1 @@
+<?php die("Access Denied"); ?>#x#{"syntax_errors":0,"hard_bounces":0,"soft_bounces":0,"unsubscribes":0,"abuse_reports":0,"forwards":0,"forwards_opens":0,"opens":4,"last_open":"2015-11-23 07:06:00","unique_opens":1,"clicks":0,"unique_clicks":0,"users_who_clicked":0,"last_click":null,"emails_sent":1}

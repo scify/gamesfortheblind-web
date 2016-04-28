@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension type = "component"
+		   version = "2.5"
+		   method = "upgrade">
+	<name>JUserTube</name>
+	<description>Supports Jusertube Module lightbox</description>
+	<version>8.1</version>
+	<creationDate>May 2012</creationDate>
+	<author>Md. Afzal Hossain</author>
+	<authorEmail>afzal.csedu@gmail.com</authorEmail>
+	<authorUrl>http://www.srizon.com</authorUrl>
+	<copyright>Copyright 2012 Md. Afzal Hossain. All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<administration>
+		<menu>JUsertube</menu>
+		<files folder = "admin">
+			<filename>index.html</filename>
+			<filename>jusertube.php</filename>
+			<filename>config.xml</filename>
+		</files>
+		<languages folder = "admin">
+			<language tag = "en-GB">language/en-GB/en-GB.com_jusertube.ini</language>
+			<language tag = "en-GB">language/en-GB/en-GB.com_jusertube.sys.ini</language>
+		</languages>
+	</administration>
+
+	<files folder = "site">
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>jusertube.php</filename>
+		<filename>metadata.xml</filename>
+		<folder>lib</folder>
+		<folder>views</folder>
+		<folder>language</folder>
+	</files>
+
+	<media>
+		<folder>srizon</folder>
+	</media>
+
+	<languages folder = "site">
+		<language tag = "en-GB">language/en-GB/en-GB.com_jusertube.ini</language>
+	</languages>
+</extension>

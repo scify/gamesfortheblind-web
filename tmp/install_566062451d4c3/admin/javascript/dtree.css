@@ -1,0 +1,61 @@
+.dtree {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #666;
+	white-space: nowrap;
+}
+.dtree img {
+	border: 0px;
+	vertical-align: middle;
+}
+.dtree a {
+	color: #333;
+	text-decoration: none;
+}
+.dtree a.node, .dtree a.nodeSel {
+	white-space: nowrap;
+	padding: 1px 2px 1px 2px;
+}
+.dtree a.node:hover, .dtree a.nodeSel:hover {
+	color: #333;
+	text-decoration: underline;
+}
+.dtree a.nodeSel {
+	background-color: #c0d2ec;
+}
+.menu_table {
+    border-width: 1px 1px 1px 1px;
+	border-spacing: 2px;
+	border-style: outset outset outset outset;
+	border-color: gray gray gray gray;
+	border-collapse: separate;
+	background-color: white;
+	color:#333;
+}
+.icon-32-ktt {
+	background-image: url('../images/new_icons/icon-32-key-to-title.png');
+}
+.icon-32-ttk {
+	background-image: url('../images/new_icons/icon-32-title-to-key.png');
+}
+.icon-32-atk {
+	background-image: url('../images/new_icons/icon-32-arttitle-to-key.png');
+}
+.icon-32-att {
+	background-image: url('../images/new_icons/icon-32-arttitle-to-title.png');
+}
+.icon-32-gendesc {
+	background-image: url('../images/new_icons/icon-32-generate-desc.png');
+}
+.icon-32-seosticky {
+	background-image: url('../images/new_icons/icon-32-sticky.png');
+}
+.icon-32-seounsticky {
+	background-image: url('../images/new_icons/icon-32-unsticky.png');
+}
+.icon-32-aboutseo {
+	background-image: url('../images/new_icons/icon-32-about-ijoomla-seo.png');
+}
+.icon-32-hitreset {
+	background-image: url('../images/new_icons/icon-32-reset-count.png');
+}

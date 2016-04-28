@@ -1,0 +1,213 @@
+/**
+ * @package   Zhong - accessibletemplate
+ * @version   2.2.0
+ * @author    Francesco Zaniol, accessibletemplate - http://www.accessibletemplate.com
+ * @copyright Copyright (C) 2011-Present Francesco Zaniol
+ * @license   accessibletemplate Terms & Conditions - http://www.accessibletemplate.com/en/terms-and-conditions
+ **/
+
+/*-------------------------
+-  MEDIA QUERIES - SMALL SCREENS & MOBILES
+------------------------ */
+/* Note that all those properties are set only for a liquid layout */
+@media screen and (max-width: 480px){
+	.full-layout-width #layout-container_zng #header #header-top,
+	.liquid-layout-width #layout-container_zng #header #header-top{float:right;position:relative !important;clear:both !important;}
+	.full-layout-width #layout-container_zng #header #search-module-outer,
+	.liquid-layout-width #layout-container_zng #header #search-module-outer{float:right !important;}
+	.full-layout-width #layout-container_zng #logo-wrap,
+	.liquid-layout-width #layout-container_zng #logo-wrap{
+		float:none !important;
+		width:100% !important;
+		text-align:center !important;
+		margin:0 !important;
+		}
+	.full-layout-width #layout-container_zng #top-bar,
+	.full-layout-width #layout-container_zng #top-bar-inner,
+	.liquid-layout-width #layout-container_zng #top-bar,
+	.liquid-layout-width #layout-container_zng #top-bar-inner{height: auto !important;overflow: hidden !important;}
+	.full-layout-width #layout-container_zng #logo-wrap,
+	.full-layout-width #layout-container_zng #logo-wrap img,
+	.full-layout-width #layout-container_zng #logo-wrap a,
+	.liquid-layout-width #layout-container_zng #logo-wrap,
+	.liquid-layout-width #layout-container_zng #logo-wrap img,
+	.liquid-layout-width #layout-container_zng #logo-wrap a{margin:0 auto !important;}
+	.full-layout-width #layout-container_zng #titles-container,
+	.full-layout-width #layout-container_zng #titles-container-middle,
+	.full-layout-width #layout-container_zng #titles-container-inner,
+	.full-layout-width #layout-container_zng #titles-container #title,
+	.full-layout-width #layout-container_zng #titles-container #subtitle,
+	.liquid-layout-width #layout-container_zng #titles-container,
+	.liquid-layout-width #layout-container_zng #titles-container-middle,
+	.liquid-layout-width #layout-container_zng #titles-container-inner,
+	.liquid-layout-width #layout-container_zng #titles-container #title,
+	.liquid-layout-width #layout-container_zng #titles-container #subtitle{
+		float:none !important;
+		position:relative !important;
+		width:100% !important;
+		text-align:center !important;
+		top:0 !important;
+		right:0 !important;
+		bottom:0 !important;
+		left:0 !important;
+		margin:0 0 0.2em 0 !important;
+		padding:0 !important;
+		text-indent:0 !important;
+		}
+	.full-layout-width #layout-container_zng #titles-container #title,
+	.liquid-layout-width #layout-container_zng #titles-container #title{font-size:1.8em !important;}
+	.full-layout-width #layout-container_zng #titles-container #subtitle,
+	.liquid-layout-width #layout-container_zng #titles-container #subtitle{font-size:1em !important;margin-bottom:0.6em !important;}
+	.full-layout-width #layout-container_zng #left-column,
+	.full-layout-width #layout-container_zng #main-content-container,
+	.full-layout-width #layout-container_zng #right-column,
+	.full-layout-width .accessibility-module,
+	.liquid-layout-width #layout-container_zng #left-column,
+	.liquid-layout-width #layout-container_zng #main-content-container,
+	.liquid-layout-width #layout-container_zng #right-column,
+	.liquid-layout-width .accessibility-module
+	{
+		float:left !important;
+		width:100% !important;
+		clear:both;
+		}
+	/* Columns
+	--------------------------- */
+	.full-layout-width #layout-container_zng .column-1,
+	.full-layout-width #layout-container_zng .column-2,
+	.full-layout-width #layout-container_zng .column-3,
+	.full-layout-width #layout-container_zng .cols-1,
+	.full-layout-width #layout-container_zng .cols-2 .column-1,
+	.full-layout-width #layout-container_zng .cols-2 .column-2,
+	.full-layout-width #layout-container_zng .cols-3 .column-1,
+	.full-layout-width #layout-container_zng .cols-3 .column-2,
+	.full-layout-width #layout-container_zng .cols-3 .column-3,
+	.full-layout-width #layout-container_zng .cols-4 .column-1,
+	.full-layout-width #layout-container_zng .cols-4 .column-2,
+	.full-layout-width #layout-container_zng .cols-4 .column-3,
+	.full-layout-width #layout-container_zng .cols-4 .column-4,
+	.full-layout-width #layout-container_zng .col-style-full,
+	.full-layout-width #layout-container_zng .col-style-2,
+	.full-layout-width #layout-container_zng .col-style-3,
+	.full-layout-width #layout-container_zng .col-style-4,
+	.full-layout-width #layout-container_zng .col-style-5,
+	.full-layout-width #layout-container_zng .col-style-6,
+	.full-layout-width #layout-container_zng .custom-module_column-width-1,
+	.full-layout-width #layout-container_zng .custom-module_column-width-2,
+	.full-layout-width #layout-container_zng .custom-module_column-width-3,
+	.full-layout-width #layout-container_zng .custom-module_column-width-4,
+	.full-layout-width #layout-container_zng .marked-block-dark,
+	.full-layout-width #layout-container_zng .marked-block-light,
+	.full-layout-width #layout-container_zng .marked-block-dark.col-style-full,
+	.full-layout-width #layout-container_zng .marked-block-light.col-style-full,
+	.full-layout-width #layout-container_zng .marked-block-dark.col-style-2,
+	.full-layout-width #layout-container_zng .marked-block-light.col-style-2,
+	.full-layout-width #layout-container_zng .marked-block-dark.col-style-3,
+	.full-layout-width #layout-container_zng .marked-block-light.col-style-3,
+	.full-layout-width #layout-container_zng .marked-block-dark.col-style-4,
+	.full-layout-width #layout-container_zng .marked-block-light.col-style-4,
+	.full-layout-width #layout-container_zng .marked-block-dark.col-style-5,
+	.full-layout-width #layout-container_zng .marked-block-light.col-style-5,
+	.full-layout-width #layout-container_zng .marked-block-dark.col-style-6,
+	.full-layout-width #layout-container_zng .marked-block-light.col-style-6,
+	.liquid-layout-width #layout-container_zng .column-1,
+	.liquid-layout-width #layout-container_zng .column-2,
+	.liquid-layout-width #layout-container_zng .column-3,
+	.liquid-layout-width #layout-container_zng .cols-1,
+	.liquid-layout-width #layout-container_zng .cols-2 .column-1,
+	.liquid-layout-width #layout-container_zng .cols-2 .column-2,
+	.liquid-layout-width #layout-container_zng .cols-3 .column-1,
+	.liquid-layout-width #layout-container_zng .cols-3 .column-2,
+	.liquid-layout-width #layout-container_zng .cols-3 .column-3,
+	.liquid-layout-width #layout-container_zng .cols-4 .column-1,
+	.liquid-layout-width #layout-container_zng .cols-4 .column-2,
+	.liquid-layout-width #layout-container_zng .cols-4 .column-3,
+	.liquid-layout-width #layout-container_zng .cols-4 .column-4,
+	.liquid-layout-width #layout-container_zng .col-style-full,
+	.liquid-layout-width #layout-container_zng .col-style-2,
+	.liquid-layout-width #layout-container_zng .col-style-3,
+	.liquid-layout-width #layout-container_zng .col-style-4,
+	.liquid-layout-width #layout-container_zng .col-style-5,
+	.liquid-layout-width #layout-container_zng .col-style-6,
+	.liquid-layout-width #layout-container_zng .custom-module_column-width-1,
+	.liquid-layout-width #layout-container_zng .custom-module_column-width-2,
+	.liquid-layout-width #layout-container_zng .custom-module_column-width-3,
+	.liquid-layout-width #layout-container_zng .custom-module_column-width-4,
+	.liquid-layout-width #layout-container_zng .marked-block-dark,
+	.liquid-layout-width #layout-container_zng .marked-block-light,
+	.liquid-layout-width #layout-container_zng .marked-block-dark.col-style-full,
+	.liquid-layout-width #layout-container_zng .marked-block-light.col-style-full,
+	.liquid-layout-width #layout-container_zng .marked-block-dark.col-style-2,
+	.liquid-layout-width #layout-container_zng .marked-block-light.col-style-2,
+	.liquid-layout-width #layout-container_zng .marked-block-dark.col-style-3,
+	.liquid-layout-width #layout-container_zng .marked-block-light.col-style-3,
+	.liquid-layout-width #layout-container_zng .marked-block-dark.col-style-4,
+	.liquid-layout-width #layout-container_zng .marked-block-light.col-style-4,
+	.liquid-layout-width #layout-container_zng .marked-block-dark.col-style-5,
+	.liquid-layout-width #layout-container_zng .marked-block-light.col-style-5,
+	.liquid-layout-width #layout-container_zng .marked-block-dark.col-style-6,
+	.liquid-layout-width #layout-container_zng .marked-block-light.col-style-6
+		{display:block;float:none;width:auto;margin:1em 2%;clear:both;}
+	/* Side Floating Menu - modified */
+	.full-layout-width #layout-container_zng .side-menu-style_floating #main-body .menu-container ul li:hover,
+	.full-layout-width #layout-container_zng .side-menu-style_floating #main-body .menu-container ul li:focus,
+	.full-layout-width #layout-container_zng .side-menu-style_floating #main-body .menu-container ul ul,
+	.liquid-layout-width #layout-container_zng .side-menu-style_floating #main-body .menu-container ul li:hover,
+	.liquid-layout-width #layout-container_zng .side-menu-style_floating #main-body .menu-container ul li:focus,
+	.liquid-layout-width #layout-container_zng .side-menu-style_floating #main-body .menu-container ul ul{z-index:1000}
+	.full-layout-width #layout-container_zng .side-menu-style_floating #main-body .menu-container ul>li>ul,
+	.liquid-layout-width #layout-container_zng .side-menu-style_floating #main-body .menu-container ul>li>ul
+		{width:40%;left:0;top:100%;margin-top:-1px;font-size:80%}
+	}
+/*-------------------------
+-  MEDIA QUERIES - NARROW SCREENS
+------------------------ */
+@media screen and (min-width: 480px) and (max-width: 719px){
+	.full-layout-width #layout-container_zng #layout-container_zng,
+	.liquid-layout-width #layout-container_zng #layout-container_zng{margin-top:0.6em !important;}
+	.full-layout-width #layout-container_zng #left-column,
+	.full-layout-width #layout-container_zng #main-content-container,
+	.full-layout-width #layout-container_zng #right-column,
+	.liquid-layout-width #layout-container_zng #left-column,
+	.liquid-layout-width #layout-container_zng #main-content-container,
+	.liquid-layout-width #layout-container_zng #right-column{
+		float:left !important;
+		width:100% !important;
+		clear:both;
+		}
+	.full-layout-width #layout-container_zng #header #header-top,
+	.liquid-layout-width #layout-container_zng #header #header-top{float:right;position:relative !important;clear:both !important;}
+	.full-layout-width #layout-container_zng #header #search-module-outer,
+	.liquid-layout-width #layout-container_zng #header #search-module-outer{float:right !important;}
+	.full-layout-width #layout-container_zng #logo-wrap,
+	.liquid-layout-width #layout-container_zng #logo-wrap{
+		margin-top:0 !important;
+		}
+	.full-layout-width #layout-container_zng #titles-container #title,
+	.liquid-layout-width #layout-container_zng #titles-container #title{font-size:1.8em !important;}
+	.full-layout-width #layout-container_zng #titles-container #subtitle,
+	.liquid-layout-width #layout-container_zng #titles-container #subtitle{font-size:1em !important;}
+	/* Side Floating Menu - modified */
+	.full-layout-width .side-menu-style_floating #main-body .menu-container ul li:hover,
+	.full-layout-width .side-menu-style_floating #main-body .menu-container ul li:focus,
+	.full-layout-width .side-menu-style_floating #main-body .menu-container ul ul,
+	.liquid-layout-width .side-menu-style_floating #main-body .menu-container ul li:hover,
+	.liquid-layout-width .side-menu-style_floating #main-body .menu-container ul li:focus,
+	.liquid-layout-width .side-menu-style_floating #main-body .menu-container ul ul{z-index:1000}
+	.full-layout-width .side-menu-style_floating #main-body .menu-container ul>li>ul,
+	.liquid-layout-width .side-menu-style_floating #main-body .menu-container ul>li>ul{width:40%;left:0;top:100%;margin-top:-1px}
+}
+/*-------------------------
+-  MEDIA QUERIES - LARGE SCREENS
+------------------------ */
+@media screen and (min-width: 1025px){
+	.full-layout-width #layout-container_zng,
+	.liquid-layout-width #layout-container_zng{}
+}
+/*-------------------------
+-  MEDIA QUERIES - SUPER LARGE SCREENS
+------------------------ */
+@media screen and (min-width: 1921px){
+	.full-layout-width #layout-container_zng,
+	.liquid-layout-width #layout-container_zng{}
+}

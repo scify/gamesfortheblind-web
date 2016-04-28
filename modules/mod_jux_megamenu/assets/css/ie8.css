@@ -1,0 +1,30 @@
+﻿/* Center alignment for IE8 */
+body{
+    overflow-x: hidden !important;
+}
+
+#js-mainnav.megamenu.horizontal.center ul.level0 { 
+	float: left;
+    left: 50%;
+    position: relative;
+}
+
+#js-mainnav.megamenu.horizontal.center ul.level0 li.mega {
+	position:relative !important;
+	right:50%;
+}
+
+#js-mainnav.megamenu.horizontal.center ul.level1 li.mega {
+	position:relative !important;
+	right: 0px;
+}
+
+/* Fall-back for Center submenu on IE8 */
+#js-mainnav.megamenu.horizontal ul.level0 li.mega.submenu-align-center > .childcontent {
+	left: auto !important;
+}
+
+/* Fall-back for Full-width submenu on IE8 */
+#js-mainnav.megamenu.horizontal ul.level0 li.mega.submenu-align-fullwidth > .childcontent {
+	min-width: 600px;
+}

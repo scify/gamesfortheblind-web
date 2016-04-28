@@ -1,0 +1,6 @@
+.outline-element {
+    box-shadow: 0 0 5px red;
+}
+.outline-element-clicked {
+    box-shadow: 0 0 5px blue;  
+}

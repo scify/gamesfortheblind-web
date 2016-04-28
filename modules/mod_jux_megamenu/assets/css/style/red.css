@@ -1,0 +1,94 @@
+/**
+ * @version		$Id$
+ * @author		JoomlaUX!
+ * @package		Joomla.Site
+ * @subpackage	mod_jux_megamenu
+ * @copyright	Copyright (C) 2008 - 2013 by JoomlaUX. All rights reserved.
+ * @license		http://www.gnu.org/licenses/gpl.html GNU/GPL version 3
+*/
+
+#js-mainnav.megamenu.red {
+	background: #9B1200 url('../../images/grad1-mask.png') repeat-x top; /* you can change/delete the transparent gradient image or the background color */
+}
+
+
+#js-mainnav.megamenu.red #js-megaMenuToggle {
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+
+/* lv - 0
+-----------------------------------*/
+/* Styling ---*/
+
+#js-mainnav.megamenu.red ul.level0 li.megacss span.megacss,
+#js-mainnav.megamenu.red ul.level0 li.megacss a.megacss,
+#js-mainnav.megamenu.red .megaMenuToggle {
+	padding: 10px 5px 12px 6px;
+	color: #fff;
+}
+
+#js-mainnav.megamenu.red ul.level1 li:hover,
+#js-mainnav.megamenu.red ul.level1 li.over, 
+#js-mainnav.megamenu.red ul.level1 li.haschild-over { background: rgb(211, 33, 9); }
+
+#js-mainnav.megamenu.red ul.level1 li.haschild,
+#js-mainnav.megamenu.red ul.level1 li.haschild-over {
+	background-image: url(../../images/arrow.png);
+	background-repeat: no-repeat;
+	background-position: 95% center;
+}
+
+ /* CHILD CONTENT
+-----------------------------------*/
+#js-mainnav.megamenu.red .childcontent-inner {
+	background-color: #9B1200; /*change here the color to match the new color you have set for mainnav */
+	color: #fff; /* after changing code above, you might want to change this color to make the text color readable  */ 
+	
+}
+
+#js-mainnav.megamenu.red .childcontent-inner .group ul li.active {
+	background-color: #9B1200 !important;
+}
+
+#js-mainnav.megamenu.red .childcontent .group h3 {
+	background: none;
+	color: #fff;
+}
+
+
+#js-mainnav.megamenu.red .childcontent .moduletable { color: #fff; }
+
+#js-mainnav.megamenu.red .childcontent .js-moduletable a:hover,
+#js-mainnav.megamenu.red .childcontent .js-moduletable a:focus,
+#js-mainnav.megamenu.red .childcontent .js-moduletable a:active {
+	color: #fff;
+}
+
+
+
+#js-mainnav.megamenu.red .group-title .menu-title {
+	color: #fff;
+}
+
+#js-mainnav.megamenu.red .group-title .menu-desc {
+	color: #999;
+}
+
+/* Left alignment */
+#js-mainnav.megamenu.red ul.level0 li.megacss.submenu-align-left > .childcontent {
+	margin-left: 1px!important;
+}
+#megamenucss .red.megamenu ul.level0 > li.megacss:hover > a.megacss,
+#megamenucss #js-mainnav.megamenu.red ul.level0 li.active{
+    background: rgb(197, 24, 24)!important;
+    color: #ffffff!important;
+}
+#megamenucss .red .megamenu .dropdown-menu ul.level1 li.megacss:hover>a.megacss,#megamenucss .red .dropdown-menu ul.level1 li.megacss a.megacss:hover{
+    background: #b8b8b8!important;
+    color: #ffffff!important;
+}
+#megamenucss #js-mainnav.red .js-megamenu{
+	background: #9B1200;;!important;
+}

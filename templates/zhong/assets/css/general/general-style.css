@@ -1,0 +1,173 @@
+/**
+ * @package   Zhong - accessibletemplate
+ * @version   2.2.0
+ * @author    Francesco Zaniol, accessibletemplate - http://www.accessibletemplate.com
+ * @copyright Copyright (C) 2011-Present Francesco Zaniol
+ * @license   accessibletemplate Terms & Conditions - http://www.accessibletemplate.com/en/terms-and-conditions
+ **/
+/**
+ * This CSS is included in all layouts, except "high contrast"
+**/
+
+/*-------------------------
+-  GENERAL style definitions and TYPOGRAPHY style definitions
+------------------------ */
+/* Body
+--------------------------- */
+body{
+	font-family:"Helvetica Neue", Tahoma, Arial, Helvetica, sans-serif;
+	color:#444;
+	background:#E5E5E5;
+	}
+#body-wrapper{margin:1em;}
+/* Headings
+--------------------------- */
+h1,h2,h3,h4,h5,h6{
+	font-family:Georgia,serif;
+	font-style:italic;
+	font-weight:normal;
+	color:#333;
+	text-align:left;
+	line-height:120%;
+	}
+h1{font-size:240%;margin:1.2em 0.6%;}
+h2{font-size:200%;margin:1em 0.6%;}
+h3{font-size:160%;margin:1em 0.6%;}
+h4{font-size:120%;margin:0.8em 0.6%}
+h5{font-size:100%;font-weight:bold;margin:0.8em 0.6%;}
+h6{font-size:80%;font-weight:bold;margin:0.8em 0.6%;}
+/* links
+--------------------------- */
+a{color:#D93A2B;text-decoration:underline;}
+a:visited{color:#A62C21;text-decoration:underline;}
+a:focus,a:hover{color:#82B84B;}
+/* focused elements
+--------------------------- */
+a:focus,button:focus,input[type=button]:focus{
+	outline:dashed 1px #BBB;
+	outline-offset:-1px;
+	}
+/* Text elements
+--------------------------- */
+blockquote{
+	margin:0.6em 0.6em 1em 0.6em;
+	padding:1.4em 1.8em;
+	color:#666;
+	font-style:italic;
+	border:2px solid #DBDBDB;
+	background:#FFF;
+	background-image:url('../../images/framework/icons/quotes.png');
+	background-position:98% .4em;
+	background-repeat:no-repeat;
+	border-radius:0.6em;
+	-moz-border-radius:0.6em;
+	-webkit-border-radius:0.6em;
+	}
+/* Tables
+--------------------------- */
+table{background-color:#FFF;}
+td,tr{border:1px solid #D9D5D0;}
+tr:hover{background:#F4F2F2;}
+th,td,caption{}
+tfoot{font-style:italic;}
+caption{background:#E0E0E0;margin:0 1%;font-style:italic;}
+th{font-weight:bold;}
+thead,thead tr:hover{background:#333;color:#FFF;}
+thead th,thead td{border:1px solid #EEE;}
+thead th a,thead th a:link{color:#CCC;}
+thead th a:hover{color:#FFF;}
+/* Form style
+--------------------------- */
+form{}
+fieldset{border:1px solid #D9D5D0;}
+legend{font-style:italic;}
+form label{font-style:italic;}
+input,textarea,select{
+	background-color:#fff;
+	border:1px solid #CCC8C4;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	}
+textarea{}
+option{background-color:#fff;color:inherit;}
+form input[type=text],form input[type=password]{}
+button,.button,.button:visited,input[type=button]{
+	text-align:center;
+	border:1px solid #333333;
+	background:#333333;
+	color:#CCC;
+	text-transform:uppercase;
+	text-indent:0;
+	display:block;
+	padding:0.4em 0.5em;
+	cursor:pointer;
+	}
+form button,form .button,form input[type=button]{
+	margin:0.8em 0.2em 0.4em 0.2em;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	}
+button:hover,.button:hover,input[type=button]:hover,
+button:focus,.button:focus,input[type=button]:focus{border-color:#999;background-color:#666;color:#FFF;}
+button:active,.button:active,input[type=button]:active{border-color:#999;background-color:#505050;color:#FFF;}
+input:hover,textarea:hover,select:hover{background-color:#FFFFCC;}
+input:focus,textarea:focus,select:focus{background-color:#FFFFCC;border-color:#D93322 !important;}
+.checkbox:hover,.radio:hover,.checkbox:focus,.radio:focus,
+input[type=checkbox]:hover,input[type=radio]:hover,
+input[type=checkbox]:focus,input[type=radio]:focus{}
+/* Other
+--------------------------- */
+hr{
+	display:block;
+	margin:2em 6% 1.8em 6%;
+	padding:0;
+	width:auto;
+	height:0;
+	clear:both;
+	border:0;
+	border-top:1px solid #CCC;
+	border-bottom:1px solid #FFF;
+	}
+/*-------------------------
+-  MARKED BLOCKS
+--------------------------- */
+.marked-block-dark,.marked-block-light{
+	border-width:3px;
+	border-style:solid;
+	border-radius:0.6em;
+	-moz-border-radius:0.6em;
+	-webkit-border-radius:0.6em;
+	}
+.marked-block-dark{
+	color:#6a6c6c;
+	border-color:#CCC !important;
+	background:#EEE;
+	}
+.marked-block-light{
+	color:#555;
+	border-color:#DEDBDB !important;
+	background:#FFF;
+	}
+/* HEADINGS and PARAGRAPHS inside styled blocks */
+.marked-block-dark h1,.marked-block-light h1,
+.marked-block-dark h2,.marked-block-light h2,
+.marked-block-dark h3,.marked-block-light h3,
+.marked-block-dark h4,.marked-block-light h4,
+.marked-block-dark h5,.marked-block-light h5,
+.marked-block-dark h6,.marked-block-light h6{
+	border-bottom:solid 1px;
+	}
+.marked-block-dark h1,.marked-block-dark h2,.marked-block-dark h3,
+.marked-block-dark h4,.marked-block-dark h5,.marked-block-dark h6{
+	color:#6a6c6c;
+	border-bottom-color:#CCC;
+	}
+.marked-block-light h1,.marked-block-light h2,.marked-block-light h3,
+.marked-block-light h4,.marked-block-light h5,.marked-block-light h6{
+	color:#555;
+	border-bottom-color:#E3E1E1;
+	}
+.marked-block-dark p{color:#6a6c6c;}
+.marked-block-light p{color:#555;}

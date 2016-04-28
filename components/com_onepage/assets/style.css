@@ -1,0 +1,140 @@
+.grid-contener {
+    border-bottom: 1px solid #DDDDDD;
+    padding: 10px 0;    
+    margin: 10px 0;
+    overflow: hidden;
+    display: block;
+    clear: both;
+}
+div.horizontal {
+    overflow: hidden;
+    margin: 0 auto; 
+    width: 100%;
+}
+div.vertical {
+    left: 0;
+    position: fixed;
+    z-index: 9999;
+}
+.fixed{
+    position:fixed;
+    top:0;
+    z-index:99999;
+}
+
+div.menu-horizontal {
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    padding: 10px 0;  
+    overflow: hidden;
+    margin: 0 auto; 
+    clear: both;
+    display: block;
+    background:#FFFFFF;   
+} 
+div.menu-vertical {
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    padding: 10px 0;  
+    overflow: hidden;
+    margin: 0 auto; 
+    clear: both;
+    display: block;
+    background:#FFFFFF;   
+}
+div.menu-horizontal ul, div.menu-vertical ul {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-top: 0 !important;
+    padding: 0;
+    float: none !important;
+    text-align: center;    
+    background: #fff;
+}
+div.menu-vertical ul {
+    text-align: left;      
+}
+div.menu-horizontal ul > li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 8px 0 0;
+    text-align: center;
+}
+div.menu-vertical ul > li {
+    list-style-type: none;
+    margin: 0 0 8px 0;   
+}
+
+div.menu-horizontal ul > li > a, div.menu-vertical ul > li > a {
+    border-bottom: 0 none;
+    border-radius: 4px;
+    color: #777777;
+    font-weight: normal;
+    margin-left: 0;
+    padding: 8px;
+    text-align: left;
+    text-shadow: none;
+    text-transform: uppercase;
+    display: inline-block;
+    float: none !important;  
+    cursor: pointer;  
+}
+div.menu-vertical ul > li > a {
+    display: block;
+    float: none !important;  
+}
+div.menu-horizontal ul > li.active > a, div.menu-vertical ul > li.active > a {
+    border-radius: 0;
+    box-shadow: none;
+    color: #39809E;
+    text-align: left;
+}
+
+nav #pull {
+    display: none;
+}
+
+
+/*Styles for screen 515px and lower*/
+@media screen and (max-width : 600px) {
+    nav #pull {
+        display: block;
+    }    
+    nav {
+        border-bottom: 0;
+    }
+    nav ul {
+        display: none;
+        height: auto;
+    }
+    nav li {
+        display: block;
+        float: none;
+        width: 100%;
+    }    
+    nav a#pull {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+    nav a#pull:after {
+        content:"";   
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+    }
+}
+
+/*Smartphone*/
+@media only screen and (max-width : 320px) {
+    nav li {
+        display: block;
+        float: none;
+        width: 100%;
+    }
+}

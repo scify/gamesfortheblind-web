@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="library" version="2.5" method="upgrade">
+	<name>Library - compojoom</name>
+	<libraryname>compojoom</libraryname>
+	<description>LIB_COMPOJOOM_DESC</description>
+	<creationDate>@@DATE@@</creationDate>
+	<author>compojoom.com</author>
+	<authorEmail>daniel@compojoom.com</authorEmail>
+	<authorUrl>https://compojoom.com</authorUrl>
+	<copyright>(C) 2008-2014 Daniel Dimitrov and Yves Hoppe</copyright>
+	<license>GNU GPLv2 or later</license>
+	<version>4.0.43</version>
+
+	<languages folder="language">
+		##FRONTENDLANGUAGEFILES##
+	</languages>
+
+	<files folder="libraries/compojoom">
+		##LIBRARYFILES##
+	</files>
+
+	<media destination="lib_compojoom" folder="media/lib_compojoom">
+		##MEDIAPACKAGEFILES##
+	</media>
+</extension>

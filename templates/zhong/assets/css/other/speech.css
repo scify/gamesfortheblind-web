@@ -1,0 +1,18 @@
+/**
+ * @package   Zhong - accessibletemplate
+ * @version   2.2.0
+ * @author    Francesco Zaniol, accessibletemplate - http://www.accessibletemplate.com
+ * @copyright Copyright (C) 2011-Present Francesco Zaniol
+ * @license   accessibletemplate Terms & Conditions - http://www.accessibletemplate.com/en/terms-and-conditions
+ **/
+/**
+ * This file is readable only by screenreader devices.
+ **/
+*{
+	voice-family:male;
+	richness:50;
+	}
+.section-heading,#anchors-menu-container *,.anchors-container *{
+	voice-family:female;
+	richness:50;
+	}

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension type="package" version="2.5" method="upgrade">
+	<name>JUserTube Package</name>
+	<author>Md. Afzal Hossain</author>
+	<creationDate>Feb 2015</creationDate>
+	<packagename>JUserTube</packagename>
+	<copyright>All rights reserved by Afzal</copyright>
+	<packager>Md. Afzal Hossain</packager>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>afzal.csedu@gmail.com</authorEmail>
+	<authorUrl>http://www.srizon.com</authorUrl>
+	<version>8.1</version>
+	<description>Package for installing JUserTube Component and Module. It also includes a plugin called srizonmodifier which helps you to remove unwanted script/css or add new one. The plugin is provided for resolving multiple jQuery or jQuery Mootools problem</description>
+	<files folder="packages">
+		<file type="component" id="com_jusertube">com_jusertube.zip</file>
+		<file type="module" id="mod_jusertube" client="site">mod_jusertube.zip</file>
+		<file type="plugin" id="srizonmodifier">srizonmodifier.zip</file>
+	</files>
+</extension>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>SP Accordion module</name>
+	<author>JoomShaper.com</author>
+	<creationDate>Jul 2010</creationDate>
+	<copyright>Copyright (C) 2010 - 2012 JoomShaper.com. All rights reserved.</copyright>
+	<license>GNU/GPL V2 for PHP files</license>
+	<authorEmail>support@joomshaper.com</authorEmail>
+	<authorUrl>www.joomshaper.com</authorUrl>
+	<version>2.7.0</version>
+	<description>Accordion module by JoomShaper.com</description>
+	
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_sp_accordion.ini</language>
+	</languages>
+	<files>
+		<filename module="mod_sp_accordion">mod_sp_accordion.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>style</folder>
+        <folder>tmpl</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="sp_style" type="list" default="style1" label="STYLE" description="STYLE_DESC">
+					<option value="style1">Default</option>
+					<option value="style2">Button</option>
+					<option value="style3">Simple</option> 
+					<option value="style4">FAQ</option>
+				</field>	
+				<field name="catid" type="category" extension="com_content" multiple="true" size="10" default="" label="CATEGORY" description="CATEGORY_DESC" />
+				<field name="count" type="text" default="5" label="COUNT" description="COUNT_DESC" />					
+				<field name="ordering" type="list" default="a.title" label="ORDER" description="ORDER_DESC">
+					<option value="a.ordering">JOOMLA_ORDERING</option>
+					<option value="a.publish_up">PUBLISHED_UP</option>
+					<option value="a.hits">HITS</option>
+					<option value="a.title">TITLE</option>
+					<option value="a.id">ID</option>
+					<option value="a.alias">ALIAS</option>
+					<option value="a.created">CREATED</option>
+					<option value="a.modified">MODIFIED</option>
+				</field>
+				<field name="ordering_direction" type="list" default="ASC" label="ORDERING_FILTER" description="ORDERING_FILTER_DESC">
+					<option value="DESC">FILTER_DESC</option>
+					<option value="ASC">FILTER_ASC</option>
+				</field>
+				<field name="user_id" type="list" default="0" label="AUTHORS" description="AUTHORS_DESC">
+					<option value="0">ANYONE</option>
+					<option value="by_me">BYME</option>
+					<option value="not_me">NOTBYME</option>
+				</field>
+				<field name="show_featured" type="list" default="" label="FEATURED" description="FEATURED_DESC">
+					<option value="">JSHOW</option>
+					<option value="0">JHIDE</option>
+					<option value="1">ONLY_SHOW_FEATURED</option>
+				</field>				
+				<field type="radio" class="btn-group" name="opacity" default="1" label="FADE" description="FADE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field type="radio" class="btn-group" name="hidefirst" default="1" label="HIDEFIRST" description="HIDEFIRST_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="limit" type="text"	default="0" label="LIMIT" description="LIMIT_DESC" />
+				<field type="radio" class="btn-group" name="showauthor" default="0" label="SHOWAUTHOR" description="SHOWAUTHOR_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field type="radio" class="btn-group" name="showdate" default="0" label="SHOWDATE" description="SHOWDATE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>				
+				<field name="date_format" type="list" default="DATE_FORMAT_LC2" label="DATE_FORMAT" description="DATE_FORMAT_DESC">
+					<option value="DATE_FORMAT_LC">DATE_FORMAT_LC</option>
+					<option value="DATE_FORMAT_LC1">DATE_FORMAT_LC1</option>
+					<option value="DATE_FORMAT_LC2">DATE_FORMAT_LC2</option>
+					<option value="DATE_FORMAT_LC3">DATE_FORMAT_LC3</option>
+					<option value="DATE_FORMAT_LC4">DATE_FORMAT_LC4</option>
+				</field>
+				<field type="radio" class="btn-group" name="showreadon" default="0" label="SHOWREADON" description="SHOWREADON_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>				
+			</fieldset>		
+			
+			<fieldset name="advanced">
+				<field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field name="cachemode" type="hidden" default="itemid">
+				<option value="itemid"></option>
+				</field>
+				<field name="moduleclass_sfx" type="text" default="" label="MODSFX" description="MODSFX_DESC" />				
+			</fieldset>
+		</fields>
+	</config>
+</extension>

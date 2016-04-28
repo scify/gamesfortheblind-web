@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension method="upgrade" type="component" version="3.4.0">
+    <name>COM_CMC</name>
+    <author>Compojoom.com</author>
+    <creationDate>2015-07-07</creationDate>
+    <copyright>(C) 2014 - compojoom.com</copyright>
+    <authorEmail>contact-us@compojoom.com</authorEmail>
+    <authorUrl>www.compojoom.com</authorUrl>
+    <version>2.0.0</version>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <description><![CDATA[Mailchimp list management for Joomla!]]></description>
+    <scriptfile>script.php</scriptfile>
+    <files folder="components/com_cmc">
+        <file>cmc.php</file>
+<file>controller.php</file>
+<folder>controllers</folder>
+<folder>layouts</folder>
+<folder>models</folder>
+    </files>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.com_cmc.ini</language>
+    </languages>
+    <administration>
+        <menu img="../media/com_cmc/backend/images/cmc-16px.png" view="cpanel">COM_CMC</menu>
+        <submenu>
+            <menu img="../media/com_cmc/backend/images/lists-16px.png" view="lists">COM_CMC_LISTS</menu>
+            <menu img="../media/com_cmc/backend/images/users-16px.png" view="users">COM_CMC_USERS</menu>
+        </submenu>
+        <files folder="administrator/components/com_cmc">
+            <file>access.xml</file>
+<file>CHANGELOG.php</file>
+<file>cmc.php</file>
+<file>cmc.xml</file>
+<file>config.xml</file>
+<file>controller.php</file>
+<folder>controllers</folder>
+<folder>helpers</folder>
+<folder>libraries</folder>
+<folder>models</folder>
+<file>script.php</file>
+<folder>sql</folder>
+<folder>tables</folder>
+<file>version.php</file>
+<folder>views</folder>
+        </files>
+        <languages folder="administrator/language">
+            <language tag="en-GB">en-GB/en-GB.com_cmc.ini</language>
+<language tag="en-GB">en-GB/en-GB.com_cmc.sys.ini</language>
+        </languages>
+    </administration>
+    <media destination="com_cmc" folder="media/com_cmc">
+        <folder>backend</folder>
+    </media>
+
+    <updateservers>
+        <server type="extension" priority="1" name="CMC Updates"><![CDATA[https://compojoom.com/index.php?option=com_ars&view=update&task=stream&format=xml&id=13&dummy=extension.xml]]></server>
+    </updateservers>
+</extension>

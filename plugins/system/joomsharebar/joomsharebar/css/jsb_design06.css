@@ -1,0 +1,52 @@
+/* Design 06 CSS JoomShareBar Copyright Roy Haanen */
+
+.design06 {
+    /*-moz-box-shadow: 1px 1px 1px 1px #a8a8a8;
+    -webkit-box-shadow: 1px 1px 1px 1px #a8a8a8;
+    box-shadow: 1px 1px 1px 1px #a8a8a8;*/
+    cursor: pointer;
+    display: inline-block;
+    text-align: left;
+    vertical-align:middle;
+    text-decoration: none!important;
+    /*text-shadow: 0 1px 0 rgba(0,0,0,0.5);*/
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+    color:#FFF!important;
+    text-indent:0;
+    padding: 0 0.5em 0 0.5em;
+    font-family: "Lucida Grande", Tahoma, sans-serif;
+    height:2.5em;
+    line-height:2.5em;
+}
+
+.design06:after{
+    content: "";
+    padding:0.25em 0.1em;
+    font: 120%/1.65 zocial;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none!important;
+    text-transform: none;
+    -moz-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    width: 1.3em;
+    float: right;
+}
+
+.design06.facebook-like:after{content: "f";}
+.design06.twitter-share:after{content: "T";}
+.design06.pinterest-pinit:after{content: "1";}
+.design06.googleplus-one:after{content: "+";}
+.design06.googleplus-share:after{content: "+";}
+.design06.stumbleupon-share:after{content: "/";}
+.design06.tumblr-share:after{content: "t";}
+.design06.linkedin-share:after{content: "L";}
+.design06.xing-share:after{content: "X";}
+.design06.bufferapp-button:after{content: "\00E5";}
+.design06.print:after{content: "\d1";}
+.design06.email-share:after{content: "\5d";}

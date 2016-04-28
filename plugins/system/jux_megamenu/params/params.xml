@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+		<fields name="params" addfieldpath="/plugins/system/jux_megamenu/elements">
+			<fieldset name="mega-params" label="Parameters (JUX Mega Menu Extended)">
+				<field name="mega_showtitle" type="radio" default="1" class="btn-group" label="SHOW_TITLE" description="SHOW_TITLE_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="mega_font_awesome" type="text" size="30" default="" label="FONT_AWESOME" description="FONT_AWESOME_DESC" />
+				<field name="mega_desc" type="textarea" rows="5" cols="30" default="" label="Description" description="DESCRIPTION_DESC" />
+				<field name="mega_tooltip" type="radio" class="btn-group" default="0" label="TOOLTIP_TYPE" description="TOOLTIP_TYPE_DESC">
+					<option value="0">TOOLTIP_DEFAULT</option>
+					<option value="1">TOOLTIP_HTML</option>
+				</field>
+				<field name="mega_tooltip_content" type="textarea" rows="5" cols="30" default="" label="TOOTIP_CONTENT" description="TOOTIP_CONTENT_DESC" filter="raw"/>
+				<field name="mega_cols" type="text" size="30" default="1" label="COLUMNS" description="COLUMNS_DESC" />
+				<field name="mega_group" type="radio" class="btn-group" default="0" label="GROUP" description="GROUP_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="mega_width" type="text" size="30" default="" label="SUBMENU_WIDTH" description="SUBMENU_WIDTH_DESC" />
+				<field name="mega_colw" type="text" size="30" default="" label="SUBMENU_COLUMN_WIDTH" description="SUBMENU_COLUMN_WIDTH_DESC" />
+				<field name="mega_colxw" type="textarea" rows="5" cols="30" default="" label="SUBMENU_COLUMNI_WIDTH" description="SUBMENU_COLUMNI_WIDTH_DESC" />
+				<field name="mega_class" type="text" size="30" default="" label="ADDITIONAL_CLASS" description="ADDITIONAL_CLASS_DESC" />
+				<field name="submenu_align" type="radio" class="btn-group" default="auto" label="JUX_MEGAMENU_SUBMENU_ALIGN_LABEL" description="JUX_MEGAMENU_SUBMENU_ALIGN_DESC">
+					<option value="auto">JUX_MEGAMENU_AUTO</option>
+					<option value="left">JUX_MEGAMENU_LEFT</option>
+					<option value="right">JUX_MEGAMENU_RIGHT</option>
+					<option value="center">JUX_MEGAMENU_CENTER</option>
+					<option value="fullwidth">JUX_MEGAMENU_FULLWIDTH</option>
+				</field>
+				<field name="mega_subcontent" type="juxradio" class="btn-group" default="0" label="SUBMENU_CONTENT" description="SUBMENU_CONTENT_DESC">
+					<option value="0">Child menu items</option>
+					<option value="mod" sub_fields="mega_subcontent_mod_modules">Modules</option>
+					<option value="pos" sub_fields="mega_subcontent_pos_positions">Module positions</option>
+				</field>
+				<field name="mega_subcontent_mod_modules" type="modules" default="0" label="SELECT_MODULES" description="SELECT_MODULES_DESC" />
+				<field name="mega_subcontent_pos_positions" type="positions" default="0" label="SELECT_POSITIONS" description="SELECT_POSITIONS_DESC" />
+			</fieldset>
+		</fields>
+</form>

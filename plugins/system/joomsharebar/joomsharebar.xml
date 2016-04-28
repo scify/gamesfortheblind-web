@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+    <name>PLG_SYSTEM_JOOMSHAREBAR</name>
+    <creationDate>June 2013</creationDate>
+    <author>JooMarketer.com</author>
+    <authorEmail>roy@joomarketer.com</authorEmail>
+    <authorUrl>www.joomarketer.com</authorUrl>
+    <copyright>Copyright 2014 JooMarketer.com</copyright>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>1.0.9</version>
+    <description>PLG_SYSTEM_JOOMSHAREBAR_DESC</description>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_system_joomsharebar.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_joomsharebar.sys.ini</language>
+    </languages>
+
+    <files>
+        <filename plugin="joomsharebar">joomsharebar.php</filename>
+        <filename>index.html</filename>
+        <folder>joomsharebar</folder>
+    </files>
+    <config>
+        <fields name="params" addfieldpath="/plugins/system/joomsharebar/joomsharebar/admin/formfields">
+            <fieldset name="JSB_BASIC_SETTINGS">
+                <field type="item" path="/plugins/system/joomsharebar/joomsharebar/admin/" />
+                <field name="sub_header_1" type="sub" text="JSB_SUB_ARTICLE_VIEW_SETTINGS" />
+                <field name="showInArticleView" type="cb" value="1" label="Show in Article view" description="Display the plugin in Article view or not." >
+                </field>
+
+                <field name="skyscraperOrBar" type="list" default="skyscraper" label="Display as (in Article view)" description="Do you want to display the buttons as a horizontal bar or as (vertical) Skyscraper?">
+                    <option value="skyscraper">Floating Vertical Skyscraper</option>
+                    <option value="horizontal_bar">Horizontal Bar</option>
+                </field>
+
+                <field name="horizontalBarTopBottom" type="list" default="top" label="Top/Bottom Article (Hori Bar Only)" description="Do you want to display the buttons on the top or bottom of the article? This setting only applies if you have selected Horizontal Bar in Article View above.">
+                    <option value="top">Top of article</option>
+                    <option value="bottom">Bottom of Article</option>
+                </field>
+
+                <field name="buttonLayout_ArticleView" type="radio" class="radio_margin" default="vertical" label="Button Layout Article View" description="Select a Button Layout Style for the Article View.">
+                    <option value="vertical">VERTICAL_ANNOTATION_ARTICLE_VIEW</option>
+                    <option value="horizontal">HORIZONTAL_ANNOTATION_ARTICLE_VIEW</option>
+                </field>
+
+                <field name="excludeArticles" type="text" default="" label="Exclude Article(s)" description="Exclude content articles from showing JoomShareBar. Enter the article ID that shouldn't display the plugin. Multiple articles can be entered by separating IDs by a comma (,). Article IDs can be found in 'Content->Article Manager' in the most right column." />
+
+                <field name="sub_header_0" type="sub" text="JSB_SUB_FRONTPAGE_VIEW_SETTINGS" />
+                <field name="showOnFrontpage" type="cb" value="1" label="Show on Frontpage (Featured View)" description="Display the plugin on Frontpage (Featured View) or not." >
+                </field>
+                <field name="note_frontpage" type="note" text="Note: On the Frontpage it is ONLY possible to display a Vertical Skyscraper, regardless of the 'Display as (in Article View)' setting above. The design will be inherited from Article View Design." />
+                <field name="enableFBPageUrl" type="cb" value="1" label="Enable Facebook Page URL (Frontpage Only)" description="ONLY on Frontpage: use a specified Facebook Page URL in stead of the domain url." ></field>
+                <field name="note_fb_url" type="note" text="Note: if Facebook Page URL is enabled, (ONLY) the FRONTPAGE will use the specified URL in the field below. Big advantage: when a user likes your homepage, he or she automatically likes you FB Page." />
+                <field name="FBPageUrl" type="text" default="http://www.facebook.com/XXXXXX" label="Facebook Page URL" description="Replace the XXXXXX with your unique Facebook Page URL (e.g. http://www.facebook.com/joomarketer)." />
+                <field name="note_fb_url_set" type="note" text="Replace XXXXXX in the text field above with your unique Facebook Page URL (e.g. http://www.facebook.com/joomarketer)." />
+
+                <field name="sub_header_3" type="sub" text="JSB_SUB_CATEGORY_VIEW_SETTINGS" />
+
+                <field name="showBarInCategoryView" type="cb" value="1" label="Show in Category view" description="Display the horizontal bar in Category view or not. In Category view only horizontal bar display is possible due to the possibility of multiple instances of the plugin as it is displayed for all articles." >
+                </field>
+
+                <field name="note_cat_bar" type="note" text="In Category (Blog) View it is ONLY possible to display a Horizontal Bar due to the fact that there are multiple articles with their own specific number of shares." />
+
+                <!--<field name="skyscraperOrBar_CategoryView" type="list" default="horizontal_bar" label="Display as (in Category view). READ NOTE!" description="Do you want to display the buttons as a horizontal bar or as (vertical) Skyscraper in Category View? &lt;br /&gt;&lt;br /&gt;&lt;b&gt;NOTE: Be sure to test your settings properly! Category view can display multiple instances of the plugin and can therefore make a layout mess of your website if wrongly set up.&lt;/b&gt;">
+                    <option value="skyscraper">Vertical Skyscraper</option>
+                    <option value="horizontal_bar">Horizontal Bar</option>
+                </field>-->
+
+                <field name="catViewTopBottom" type="list" default="top" label="Top/Bottom Category View" description="Do you want to display the buttons on the top or bottom in Category View?">
+                    <option value="top">Top</option>
+                    <option value="bottom">Bottom</option>
+                </field>
+
+                <field name="buttonLayout_CategoryView" type="radio" class="radio_margin" default="horizontal" label="Button Layout Category View" description="Select a Button Layout Style for the Category View.">
+                    <option value="vertical">VERTICAL_ANNOTATION_CATEGORY_VIEW</option>
+                    <option value="horizontal">HORIZONTAL_ANNOTATION_CATEGORY_VIEW</option>
+                </field>
+
+                <field name="excludeCats" type="text" default="" label="Exclude Categories" description="Exclude content categories from showing JoomShareBar. Enter the category ID that shouldn't display the plugin. Multiple categories can be entered by separating IDs by a comma (,). Category IDs can be found in 'Content->Category Manager' and then the most right column." />
+
+                <field name="sub_header_2" type="sub" text="JSB_SUB_SKYSCRAPER_SETTINGS" />
+                <field name="note_00" type="note" text="JSB_SUB_SKYSCRAPER_SETTINGS_DESC" />
+                <field type="text" name="skyscraperLeftMarginFromCenter" default="-620px" label="Left Margin from Center" description="Fill out a number followed by px (e.g. 10px), default -620px. Only adjust if the skyscraper overlaps your website." />
+                <field name="note_001" type="note" text="JSB_SUB_SKYSCRAPER_MARGIN_DESC" />
+                <field type="text" name="skyscraperMarginFromTop" default="200px" label="Initial Top Position" description="Fill out a number followed by px (e.g. 10px), default 200px. This number sets the initial position of the Skyscraper from the top. If you choose to enable the sliding mechanisn the margin from the top can be set in the design for that specific view (3.2 / 3.3)." />
+                <field name="note_002" type="note" text="JSB_SUB_SKYSCRAPER_POSITION_DESC" />
+                <field name="alignmentButtonsArticle" type="list" default="center" label="Aligns buttons (Skyscraper)" description="Choose the button alignment (for the skyscraper only).">
+                    <option value="left">Left</option>
+                    <option value="center">Center</option>
+                    <option value="right">Right</option>
+                </field>
+
+            </fieldset>
+            <fieldset name="JSB_EXTRA_SETTINGS">
+                <field type="item" path="/plugins/system/joomsharebar/joomsharebar/admin/" />
+                <field name="sub_header_4" type="sub" text="JSB_SUB_FOLLOW" />
+
+                <field name="verticalSlide" type="radio" class="radio_margin" default="slide" label="Skyscraper Slide/Follow Effect" description="Enable / Disable Slide effect of Vertical Skyscraper. This only applies for the ARTICLE view in combination with the Vertical Skyscraper!">
+                    <option value="disabled">NO_SLIDE</option>
+                    <option value="fixed">FIXED</option>
+                    <option value="slide">SLIDE</option>
+                    <option value="disabled" disabled="true">SLIDE_ANIMATION</option>
+                </field>
+
+                <field name="horizontalSlide" type="radio" class="radio_margin" default="disabled" label="Horizontal Bar Slide/Follow Effect" description="Enable / Disable Slide effect of the Horizontal Bar. This only applies for the ARTICLE view in combination with the Horizontal Bar!">
+                    <option value="disabled">NO_SLIDE</option>
+                    <option value="slide">SLIDE</option>
+                </field>
+
+                <!--<field name="sub_header_5" type="sub" text="JSB_AUTO_TRANSFORM" />
+
+                <field name="transformVerticalHorizontal" type="cb" value="1" label="Auto Transform Skyscraper to Horizontal Bar" description="When a website visitor has a limited screen resolution a skyscraper can fall off the viewable screen. When enabled the skyscraper is automatically transformed into a horizontal bar (based on the set pixels in the next option)!" >
+                </field>
+
+                <field name="transformVerticalHorizontalPixels" type="text" default="1200" size="20" label="Transform on Screen smaller then width (in pixels)" description="When a website visitor has a limited screen resolution a skyscraper can fall off the viewable screen. In this case the vertical skyscraper can automatically be transformed into a horizontal bar! Set the width in pixels when the transformation needs to take place." />-->
+
+                <field name="sub_header_6" type="sub" text="JSB_LAZY" />
+
+                <field name="lazyLoadingType" type="radio" class="radio_margin" default="default" label="Lazy Loading Type" description="Enable or disable Lazy Loading Buttons. Enabling this setting loads the social buttons only when needed, asynchronously! This means that your website renders without hanging on 50KB of social media!">
+                    <option value="default">LAZY_LOADING_DEFAULT</option>
+                    <option value="scroll" disabled="true">LAZY_LOADING_SCROLL</option>
+                    <option value="hover" disabled="true">LAZY_LOADING_HOVER</option>
+                    <option value="no_load" disabled="true">LAZY_LOADING_NOLOAD</option>
+                </field>
+
+                <field name="sub_header_5" type="sub" text="JSB_AUTO_TRANSFORM" />
+
+                <field name="responsive" type="radio" label="JSB_AUTO_TRANSFORM" class="radio_margin" default="default">
+                    <option value="default" disabled="true">RESPONSIVE</option>
+                </field>
+
+                <field name="note_responsive" type="note" text="ONLY Plugin in the Joomla! Extensions Directory with Responsive Support! On small resolutions a Vertical Skyscraper will be auto transformed to a Horizontal Bar so the Sharing buttons are always visible!" />
+
+                <field name="sub_header_k2" type="sub" text="JSB_OTHER_CONTENT" />
+                <field name="showInK2" type="radio" class="radio_margin" default="default" label="Show in K2 Content" ><option value="default" disabled="true">SHOWK2</option>
+                </field>
+
+                <field name="sub_header_6.1" type="sub" text="JSB_SUPPORT" />
+                <field name="want_this" type="radio" class="radio_margin" default="enable" label="Support Author" description="Enable or disable Lazy Loading Buttons. Enabling this setting loads the social buttons only when needed, asynchronously! This means that your website renders without hanging on 50KB of social media!">
+                    <option value="enable">Yes</option>
+                    <option value="disable" disabled="true">WANT_THIS_DISABLE</option>
+                </field>
+
+                <field name="sub_header_6.2" type="sub" text="JSB_JQUERY" />
+                <field name="prevent_jquery_load" type="cb" value="1" label="Prevent jQuery Load" description="If you are having possible jQuery conflicts, this is the first setting to enable." >
+                </field>
+
+
+            </fieldset>
+            <fieldset name="JSB_ENABLE_ORDER_BUTTONS">
+                <field type="item" path="/plugins/system/joomsharebar/joomsharebar/admin/" />
+                <field name="sub_header_7" type="sub" text="JSB_ORDERING" />
+                <field name="sub_header_8" type="subsub" text="JSB_ORDERING_DESC" />
+
+                <field name="orderFblikeBtn" type="list" default="1" label="Facebook Like order">
+                    <option value="1">1 ( = most left / top)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7 ( = most right / bottom)</option>
+                    <option value="disable">DISABLE</option>
+                </field>
+
+                <field name="orderTwitterBtn" type="list" default="2" label="Twitter Tweet order">
+                    <option value="1">1 ( = most left / top)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7 ( = most right / bottom)</option>
+                    <option value="disable">DISABLE</option>
+                </field>
+
+                <field name="orderGoogleplusBtn" type="list" default="3" label="Google+ order">
+                    <option value="1">1 ( = most left / top)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7 ( = most right / bottom)</option>
+                    <option value="disable">DISABLE</option>
+                </field>
+                <field name="orderGoogleplusShareBtn" type="list" default="4" label="Google+ Share order">
+                    <option value="1">1 ( = most left / top)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7 ( = most right / bottom)</option>
+                    <option value="disable">DISABLE</option>
+                </field>
+
+                <field name="orderLinkedinBtn" type="list" default="5" label="LinkedIn Share order">
+                    <option value="1">1 ( = most left / top)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7 ( = most right / bottom)</option>
+                    <option value="disable">DISABLE</option>
+                </field>
+
+                <field name="orderBufferBtn" type="list" default="6" label="Buffer order">
+                    <option value="1">1 ( = most left / top)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7 ( = most right / bottom)</option>
+                    <option value="disable">DISABLE</option>
+                </field>
+
+                <field name="orderPinterestBtn" type="list" default="7" label="Pinterest order">
+                    <option value="1">1 ( = most left / top)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7 ( = most right / bottom)</option>
+                    <option value="disable">DISABLE</option>
+                </field>
+
+                <field name="sub_header_9" type="sub" text="JSB_EXCLUDE_CATEGORY" />
+                <field name="exclCatViewFblikeBtn" type="radio" default="enableCatView" label="Facebook Category Exclude" description="Exclude Facebook Like Button from Category view or show button if enabled in general settings.">
+                    <option value="enableCatView">Show (if enabled)</option>
+                    <option value="disableCatView">Don't show in Category view</option>
+                </field>
+
+                <field name="exclCatViewTwitterBtn" type="radio" default="enableCatView" label="Twitter Category Exclude" description="Exclude Twitter Tweet Button from Category view or show button if enabled in general settings.">
+                    <option value="enableCatView">Show (if enabled)</option>
+                    <option value="disableCatView">Don't show in Category view</option>
+                </field>
+
+                <field name="exclCatViewGoogleplusBtn" type="radio" default="enableCatView" label="Google+ Category Exclude" description="Exclude Google +1 Button from Category view or show button if enabled in general settings.">
+                    <option value="enableCatView">Show (if enabled)</option>
+                    <option value="disableCatView">Don't show in Category view</option>
+                </field>
+                <field name="exclCatViewGoogleplusShareBtn" type="radio" default="enableCatView" label="G+ Share Category Exclude" description="Exclude Google+ Share Button from Category view or show button if enabled in general settings.">
+                    <option value="enableCatView">Show (if enabled)</option>
+                    <option value="disableCatView">Don't show in Category view</option>
+                </field>
+
+                <field name="exclCatViewLinkedinBtn" type="radio" default="enableCatView" label="LinkedIn Category Exclude" description="Exclude LinkedIn Button from Category view or show button if enabled in general settings.">
+                    <option value="enableCatView">Show (if enabled)</option>
+                    <option value="disableCatView">Don't show in Category view</option>
+                </field>
+
+                <field name="exclCatViewPinterestBtn" type="radio" default="disableCatView" label="Pinterest Category Exclude" description="Exclude Pinterest Button from Category view or show button if enabled in general settings. NOTE: the Pinterest button can only display the number of pins for an image once per page. In category view this is disabled by default.">
+                    <option value="enableCatView" disabled="true">Show (if enabled)</option>
+                    <option value="disableCatView">Don't show in Category view</option>
+                </field>
+
+                <field name="exclCatViewBufferBtn" type="radio" default="enableCatView" label="Buffer Category Exclude" description="Exclude Buffer Button from Category view or show button if enabled in general settings.">
+                    <option value="enableCatView">Show (if enabled)</option>
+                    <option value="disableCatView">Don't show in Category view</option>
+                </field>
+
+            </fieldset>
+            <fieldset name="JSB_DESIGN">
+                <field type="item" path="/plugins/system/joomsharebar/joomsharebar/admin/" />
+                <!--  ### PRESETS ### -->
+                <field name="sub_header_10" type="sub" text="JSB_CONTAINER_DESIGN" />
+                <field name="note_01" type="note" text="JSB_CONTAINER_DESIGN_DESC" />
+                <field name="sub_header_11" type="subsub" text="JSB_SKYSCRAPER_DESIGN_PRESET" />
+
+                <field name="container_preset" type="radio" class="radio_margin" default="none" label="Skyscraper Layout Style" description="Select a JoomShareBar Skyscraper Layout Style for the container. Choose a preset or design your own container in 4.1.2. and 4.1.3. The horizontal bar can de designed in 4.1.2 and 4.1.3, depending on your preferences.">
+                    <option value="none">NO_PRESET</option>
+                    <option value="design1" disabled="true">CONTAINER_DESIGN_1</option>
+                    <option value="design2" disabled="true">CONTAINER_DESIGN_2</option>
+                </field>
+
+                <!--  ### ARTICLE VIEW STYLING ### -->
+                <field name="sub_header_12" type="subsub" text="JSB_CONTAINER_ARTICLE_VIEW" />
+                <field type="text" name="marginTop_ArticleView" default="10px" label="Container Top margin" description="Fill out a number followed by px (e.g. 10px)" />
+                <field type="text" name="marginBottom_ArticleView" default="10px" label="Container Bottom margin" description="Fill out a number followed by px (e.g. 10px)" />
+                <field type="jscolor" name="bGColor_ArticleView" onchange="this.style.background=this.value;" default="ffffff" label="Container background color" description="Select the background color for the horizontal bar by clicking in the field or manually enter the RGB number." />
+                <field name="note_color_002" type="note" text="JSB_CONTAINER_COLOR_DESC" />
+
+                <field type="text" name="height_ArticleView" default="auto" label="Container height (in % or px)" />
+                <field type="text" name="width_ArticleView" default="auto" label="Container width (in % or px)" />
+                <field type="text" name="roundedCorners_ArticleView" default="5px" label="Container rounded border radius (in px)" description="Fill out a number followed by px (e.g. 10px)" />
+                <field name="borderWidth_ArticleView" type="list" default="1" label="Container Border Width" description="Choose the desired border width of the container.">
+                    <option value="0px">0px</option>
+                    <option value="1px">1px</option>
+                    <option value="2px">2px</option>
+                    <option value="3px">3px</option>
+                    <option value="4px">4px</option>
+                    <option value="5px">5px</option>
+                    <option value="6px">6px</option>
+                    <option value="7px">7px</option>
+                    <option value="8px">8px</option>
+                    <option value="9px">9px</option>
+                </field>
+                <field type="list" name="borderStyle_ArticleView" default="Solid" label="Container Border Style" description="Choose the desired border style of the container.">
+                    <option value="none">None</option>
+                    <option value="solid">Solid</option>
+                    <option value="dotted">Dotted</option>
+                    <option value="dashed">Dashed</option>
+                    <option value="double">Double</option>
+                    <option value="groove">Groove</option>
+                    <option value="ridge">Ridge</option>
+                    <option value="inset">Inset</option>
+                    <option value="outset">Outset</option>
+                </field>
+                <field type="jscolor" name="borderColor_ArticleView" onchange="this.style.background=this.value;" default="ffffff" label="Container border color" description="Select the border color for the Containerc by clicking in the field or manually enter the RGB number." />
+
+                <field name="shadow_ArticleView" type="radio" default="none" label="Container Shadow" description="Add a shadow to the container.">
+                    <option value="none">No Shadow</option>
+                    <option value="1px 0 15px rgba(0,0,0,.2);">Please add a nice shadow</option>
+                </field>
+
+                <!--<field type="textarea" default="" name="customCSS_ArticleView" label="Custom Container CSS (will override plugin settings)" cols="50" rows="5" description="Will override plugin settings" />-->
+
+                <!--  ### CATEGORY VIEW STYLING ### -->
+                <field name="sub_header_13" type="subsub" text="JSB_CONTAINER_CATEGORY_VIEW" />
+                <field type="text" name="marginTop_CategoryView" default="10px" label="Container Top margin" description="Fill out a number followed by px (e.g. 10px)" />
+                <field type="text" name="marginBottom_CategoryView" default="10px" label="Container Bottom margin" description="Fill out a number followed by px (e.g. 10px)" />
+                <field type="jscolor" name="bGColor_CategoryView" onchange="this.style.background=this.value;" default="ffffff" label="Container background color" description="Select the background color for the horizontal bar by clicking in the field or manually enter the RGB number." />
+                <field name="note_color_003" type="note" text="JSB_CONTAINER_COLOR_DESC" />
+                <field type="text" name="height_CategoryView" default="auto" label="Container height (in % or px)" />
+                <field type="text" name="width_CategoryView" default="auto" label="Container width (in % or px)" />
+                <field type="text" name="roundedCorners_CategoryView" default="5px" label="Container rounded border radius (in px)" description="Fill out a number followed by px (e.g. 10px)" />
+                <field name="borderWidth_CategoryView" type="list" default="0" label="Container Border Width" description="Choose the desired border width of the container.">
+                    <option value="0px">0px</option>
+                    <option value="1px">1px</option>
+                    <option value="2px">2px</option>
+                    <option value="3px">3px</option>
+                    <option value="4px">4px</option>
+                    <option value="5px">5px</option>
+                    <option value="6px">6px</option>
+                    <option value="7px">7px</option>
+                    <option value="8px">8px</option>
+                    <option value="9px">9px</option>
+                </field>
+                <field type="list" name="borderStyle_CategoryView" default="Solid" label="Container Border Style" description="Choose the desired border style of the container.">
+                    <option value="none">None</option>
+                    <option value="solid">Solid</option>
+                    <option value="dotted">Dotted</option>
+                    <option value="dashed">Dashed</option>
+                    <option value="double">Double</option>
+                    <option value="groove">Groove</option>
+                    <option value="ridge">Ridge</option>
+                    <option value="inset">Inset</option>
+                    <option value="outset">Outset</option>
+                </field>
+                <field type="jscolor" name="borderColor_CategoryView" onchange="this.style.background=this.value;" default="ffffff" label="Container border color" description="Select the border color for the Containerc by clicking in the field or manually enter the RGB number. " />
+
+                <field name="shadow_CategoryView" type="radio" default="none" label="Container Shadow" description="Add a shadow to the container.">
+                    <option value="none">No Shadow</option>
+                    <option value="1px 0 15px rgba(0,0,0,.2);">Please add a nice shadow</option>
+                </field>
+
+                <!--<field type="textarea" default="" name="customCSS_CategoryView" label="Custom Container CSS (will override plugin settings)" cols="50" rows="5" description="Will override plugin settings" />-->
+
+                <field name="sub_header_14" type="sub" text="JSB_PRE_LOADED_BUTTON_DESIGN" />
+                <field name="note_02" type="note" text="JSB_BUTTON_DESIGN_DESC" />
+
+                <field name="preLoadedDesign" type="radio" class="radio_margin" default="design06" label="Pre-Loaded Button Style"
+                       description="Select a Pre-Loaded Button Style. If you don't want to use any pre-loaded design set the Lazy Loading Type (2.3.) to DEFAULT.">
+                    <option disabled="true" value="design06">BUTTON_PRESET_VERTICAL_DEFAULT</option>
+                    <option disabled="true" value="design01">BUTTON_PRESET_VERTICAL_2</option>
+                    <option disabled="true" value="design02">BUTTON_PRESET_VERTICAL_3</option>
+                    <option disabled="true" value="design03">BUTTON_PRESET_VERTICAL_4</option>
+                    <option disabled="true" value="design04">BUTTON_PRESET_VERTICAL_5</option>
+                    <option disabled="true" value="design05">BUTTON_PRESET_VERTICAL_6</option>
+                </field>
+
+            </fieldset>
+
+            <!--  ### BUTTON SPECIFIC SETTINGS ### -->
+            <fieldset name="JSB_BUTTON_SPECIFIC_SETTINGS">
+                <field type="item" path="/plugins/system/joomsharebar/joomsharebar/admin/" />
+
+                <field name="sub_header_button_text" type="sub" text="JSB_CUSTOM_TEXT" />
+
+                <field name="note_custom" type="note" text="JSB_CUSTOM_TEXT_NOTE" />
+                <field name="textFblikeBtn" type="text" disabled="true" default="Share" size="20" label="Facebook Button Text" description="Set Lazy Loading Type to Hover or Don't Render to see this text." />
+                <field name="textTwitterBtn" type="text" disabled="true" default="Share" size="20" label="Twitter Button Text" description="Set Lazy Loading Type to Hover or Don't Render to see this text." />
+                <field name="textGoogleplusBtn" type="text" disabled="true" default="Share" size="20" label="G+1 Button Text" description="Set Lazy Loading Type to Hover or Don't Render to see this text." />
+                <field name="textGoogleplusShareBtn" type="text" disabled="true" default="Share" size="20" label="G+Share Button Text" description="Set Lazy Loading Type to Hover or Don't Render to see this text." />
+                <field name="textLinkedinBtn" type="text" disabled="true" default="Share" size="20" label="LinkedIn Button Text" description="Set Lazy Loading Type to Hover or Don't Render to see this text." />
+                <field name="textBufferBtn" type="text" disabled="true" default="Share" size="20" label="Buffer Button Text" description="Set Lazy Loading Type to Hover or Don't Render to see this text." />
+                <field name="textPinterestBtn" type="text" disabled="true" default="Share" size="20" label="Pinterest Button Text" description="Set Lazy Loading Type to Hover or Don't Render to see this text." />
+                <field name="textXingBtn" type="text" disabled="true" default="Share" size="20" label="Xing Button Text" description="Set Lazy Loading Type to Hover or Don't Render to see this text." />
+                <field name="textStumbleUponBtn" type="text" disabled="true" default="Share" size="20" label="StumbleUpon Button Text" description="Set Lazy Loading Type to Hover or Don't Render to see this text." />
+
+                <field name="sub_header_15" type="sub" text="JSB_FACEBOOK_LIKE" />
+
+                <field name="fblikeVerb" type="list" default="like" label="Facebook Like Verb" description="Choose your Facebook Like Verb" >
+                    <option value="like">Like</option>
+                    <option value="recommend">Recommend</option>
+                </field>
+                <field name="fblikeFont" type="list" default="arial" label="Facebook Like Font" description="Choose your Facebook Like Font" >
+                    <option value="arial">Arial</option>
+                    <option value="lucida grande">Lucida grande</option>
+                    <option value="segoe ui">Segoe ui</option>
+                    <option value="tahoma">Tahoma</option>
+                    <option value="trebuchet ms">Trebuchet ms</option>
+                    <option value="verdana">Verdana</option>
+                </field>
+                <field name="fblikeColor" type="list" default="light" label="Facebook Like Color Scheme" description="Choose your Facebook Like Color Scheme" >
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                </field>
+                <field name="fblikeSend" type="radio" default="0" label="Show Share Button" description="Show or Hide Facebook Like Share Button">
+                    <option value="0">Hide</option>
+                    <option value="1">Show</option>
+                </field>
+
+                <field name="sub_header_16" type="sub" text="JSB_TWITTER_TWEET" />
+                <field name="twitterBtnSize" type="list" default="" label="Twitter Tweet Button Size" description="Choose your Twitter Tweet Button Size." >
+                    <option value="">Default</option>
+                    <option value="large">Large</option>
+                </field>
+
+                <field name="twitterName" type="text" default="" label="Twitter Tweet Via User" description="Optional: Enter a (via) user in the tweet." />
+                <field name="twitterRecommended" type="text" default="" label="Recommended Acccounts" description="Optional: Enter recommended Twitter account(s)." />
+                <field name="twitterHashtag" type="text" default="" label="Twitter Hashtags" description="Optional: Enter a Hashtag." />
+
+                <field name="twitterLanguage" type="list" default="en" label="Twitter Language" description="Choose your Twitter language" >
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                    <option value="gr">German</option>
+                    <option value="it">Italian</option>
+                    <option value="es">Spanish</option>
+                    <option value="ko">Korean</option>
+                    <option value="jp">Japanese</option>
+                </field>
+                <!-- <field name="twitterNofollow" type="radio" default="" label="TWITTER_NOFOLLOW" description="TWITTER_NOFOLOW_DESC" >
+                    <option value="">Disable</option>
+                    <option value="nofollow">Enable</option>
+                </field>
+                <field name="twitterOptout" type="radio" default="" label="TWITTER_OPTOUT" description="TWITTER_OPTOUT_DESC" >
+                    <option value="">Disable</option>
+                    <option value="true">Enable</option>
+                </field> -->
+
+                <field name="sub_header_17" type="sub" text="JSB_GOOGLE_PLUS1" />
+                <field name="note_03" type="note" text="JSB_GOOGLE_PLUS1_DESC" />
+
+                <field name="googleplusBtnSize" type="list" default="medium" label="Google +1 Button Size" description="Choose your Google +1 Button Size" >
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="tall">Tall</option>
+                    <option value="">Standard</option>
+                </field>
+                <!--<field name="googleplusLanguage" type="list" default="en-US" label="Google +1 Language" description="Choose your Google +1 Language" >
+                    <option value="am">Amharic</option>
+                    <option value="ar">Arabic</option>
+                    <option value="eu">Basque</option>
+                    <option value="bn">Bengali</option>
+                    <option value="bg">Bulgarian</option>
+                    <option value="ca">Catalan</option>
+                    <option value="zh-HK">Chinese (Hong Kong)</option>
+                    <option value="zh-CN">Chinese (Simplified)</option>
+                    <option value="zh-TW">Chinese (Traditional)</option>
+                    <option value="hr">Croatian</option>
+                    <option value="cs">Czech</option>
+                    <option value="da">Danish</option>
+                    <option value="nl">Dutch</option>
+                    <option value="en-GB">Engish (United Kingdom)</option>
+                    <option value="en-US">English (United States)</option>
+                    <option value="et">Estonian</option>
+                    <option value="fil">Filipino</option>
+                    <option value="fi">Finnish</option>
+                    <option value="fr-CA">French (Canada)</option>
+                    <option value="fr">French (France)</option>
+                    <option value="gl">Galician</option>
+                    <option value="de">German</option>
+                    <option value="el">Greek</option>
+                    <option value="gu">Gujarati</option>
+                    <option value="iw">Hebrew</option>
+                    <option value="hi">Hindi</option>
+                    <option value="hu">Hungarian</option>
+                    <option value="is">Icelandic</option>
+                    <option value="id">Indonesian</option>
+                    <option value="it">Italian</option>
+                    <option value="jp">Japanese</option>
+                    <option value="kn">Kannada</option>
+                    <option value="ko">Korean</option>
+                    <option value="lv">Latvian</option>
+                    <option value="lt">Lithuanian</option>
+                    <option value="ms">Malay</option>
+                    <option value="ml">Malayalam</option>
+                    <option value="mr">Marathi</option>
+                    <option value="no">Norwegian</option>
+                    <option value="fa">Persian</option>
+                    <option value="pl">Polish</option>
+                    <option value="pt-BR">Portugese (Brazil)</option>
+                    <option value="pt-PT">Portugese (Portugal)</option>
+                    <option value="ro">Romanian</option>
+                    <option value="ru">Russian</option>
+                    <option value="sr">Serbian</option>
+                    <option value="sk">Slovak</option>
+                    <option value="sl">Slovenian</option>
+                    <option value="es-419">Spanish (Latin America)</option>
+                    <option value="es">Spanish (Spain)</option>
+                    <option value="sw">Swahili</option>
+                    <option value="sv">Swedish</option>
+                    <option value="ta">Tamil</option>
+                    <option value="te">Telugu</option>
+                    <option value="th">Thai</option>
+                    <option value="tr">Turkish</option>
+                    <option value="uk">Ukrainian</option>
+                    <option value="ur">Urdu</option>
+                    <option value="vi">Vietnamese</option>
+                    <option value="zu">Zulu</option>
+                </field>-->
+
+                <field name="sub_header_18" type="sub" text="JSB_GOOGLE_SHARE" />
+                <field name="note_04" type="note" text="JSB_GOOGLE_SHARE_DESC" />
+
+                <field name="googleShareBtnSize" type="list" default="" label="Google Share Button Size" description="Choose your Google Share Button Size" >
+                    <option value="15">Small</option>
+                    <option value="">Medium</option>
+                    <option value="24">Large</option>
+                </field>
+                <!--<field name="googleShareLanguage" type="list" default="en-US" label="Google Share Language" description="Choose your Google Share Language" >
+                    <option value="am">Amharic</option>
+                    <option value="ar">Arabic</option>
+                    <option value="eu">Basque</option>
+                    <option value="bn">Bengali</option>
+                    <option value="bg">Bulgarian</option>
+                    <option value="ca">Catalan</option>
+                    <option value="zh-HK">Chinese (Hong Kong)</option>
+                    <option value="zh-CN">Chinese (Simplified)</option>
+                    <option value="zh-TW">Chinese (Traditional)</option>
+                    <option value="hr">Croatian</option>
+                    <option value="cs">Czech</option>
+                    <option value="da">Danish</option>
+                    <option value="nl">Dutch</option>
+                    <option value="en-GB">Engish (United Kingdom)</option>
+                    <option value="en-US">English (United States)</option>
+                    <option value="et">Estonian</option>
+                    <option value="fil">Filipino</option>
+                    <option value="fi">Finnish</option>
+                    <option value="fr-CA">French (Canada)</option>
+                    <option value="fr">French (France)</option>
+                    <option value="gl">Galician</option>
+                    <option value="de">German</option>
+                    <option value="el">Greek</option>
+                    <option value="gu">Gujarati</option>
+                    <option value="iw">Hebrew</option>
+                    <option value="hi">Hindi</option>
+                    <option value="hu">Hungarian</option>
+                    <option value="is">Icelandic</option>
+                    <option value="id">Indonesian</option>
+                    <option value="it">Italian</option>
+                    <option value="jp">Japanese</option>
+                    <option value="kn">Kannada</option>
+                    <option value="ko">Korean</option>
+                    <option value="lv">Latvian</option>
+                    <option value="lt">Lithuanian</option>
+                    <option value="ms">Malay</option>
+                    <option value="ml">Malayalam</option>
+                    <option value="mr">Marathi</option>
+                    <option value="no">Norwegian</option>
+                    <option value="fa">Persian</option>
+                    <option value="pl">Polish</option>
+                    <option value="pt-BR">Portugese (Brazil)</option>
+                    <option value="pt-PT">Portugese (Portugal)</option>
+                    <option value="ro">Romanian</option>
+                    <option value="ru">Russian</option>
+                    <option value="sr">Serbian</option>
+                    <option value="sk">Slovak</option>
+                    <option value="sl">Slovenian</option>
+                    <option value="es-419">Spanish (Latin America)</option>
+                    <option value="es">Spanish (Spain)</option>
+                    <option value="sw">Swahili</option>
+                    <option value="sv">Swedish</option>
+                    <option value="ta">Tamil</option>
+                    <option value="te">Telugu</option>
+                    <option value="th">Thai</option>
+                    <option value="tr">Turkish</option>
+                    <option value="uk">Ukrainian</option>
+                    <option value="ur">Urdu</option>
+                    <option value="vi">Vietnamese</option>
+                    <option value="zu">Zulu</option>
+                </field>-->
+
+            </fieldset>
+        </fields>
+    </config>
+</extension>
