@@ -1,9 +1,0 @@
-[
-    {
-        "library": [
-            "webcam",
-            "plupload2"
-        ],
-        "adapter": "EasyBlog"
-    }
-]

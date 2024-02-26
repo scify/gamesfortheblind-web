@@ -1,9 +1,0 @@
-[
-    {
-        "library": [
-            "plupload2",
-            "videojs"
-        ],
-        "adapter": "EasyBlog"
-    }
-]

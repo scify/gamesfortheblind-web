@@ -1,9 +1,0 @@
-[
-    {
-        "library": [
-            "plupload2",
-            "imgareaselect"
-        ],
-        "adapter": "EasyBlog"
-    }
-]

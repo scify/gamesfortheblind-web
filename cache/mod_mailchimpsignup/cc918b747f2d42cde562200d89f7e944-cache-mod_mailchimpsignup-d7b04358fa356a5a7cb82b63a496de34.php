@@ -1,1 +1,0 @@
-<?php die("Access Denied"); ?>#x#1

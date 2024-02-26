@@ -1,9 +1,0 @@
-[
-    {
-        "script": [
-            "admin/sort",
-            "admin/publishing"
-        ],
-        "adapter": "EasyBlog"
-    }
-]

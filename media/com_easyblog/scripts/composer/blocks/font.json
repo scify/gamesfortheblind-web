@@ -1,9 +1,0 @@
-[
-    {
-        "library": [
-            "colorpicker",
-            "nouislider"
-        ],
-        "adapter": "EasyBlog"
-    }
-]

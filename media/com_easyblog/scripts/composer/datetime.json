@@ -1,9 +1,0 @@
-[
-    {
-        "library": [
-            "moment",
-            "datetimepicker"
-        ],
-        "adapter": "EasyBlog"
-    }
-]
