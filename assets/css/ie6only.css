@@ -1,0 +1,22 @@
+/**
+ * @package   Zhong - accessibletemplate
+ * @version   2.2.0
+ * @author    Francesco Zaniol, accessibletemplate - http://www.accessibletemplate.com
+ * @copyright Copyright (C) 2011-Present Francesco Zaniol
+ * @license   accessibletemplate Terms & Conditions - http://www.accessibletemplate.com/en/terms-and-conditions
+ **/
+/**
+ * This CSS is visible ONLY for Internet Explorer 6
+**/
+
+.default-layout body{z-index: 1;}
+.default-layout #layout-container_zng{z-index: 2;}
+.default-layout #top-layout-container,
+.default-layout #top-layout-container *{z-index: 9999;}
+
+/*full access mode fixes*/
+.full-access div{position:relative;}
+
+/*==========================================================================
+   ADD YOUR PERSONAL STYLE HERE:
+==========================================================================*/
