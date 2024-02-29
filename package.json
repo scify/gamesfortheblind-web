@@ -1,0 +1,29 @@
+{
+  "name": "gamesfortheblind-web",
+  "version": "1.0.0",
+  "description": "A website that offers free games for the blind",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scify/gamesfortheblind-web.git"
+  },
+  "keywords": [
+    "gamesfortheblind",
+    "games",
+    "for",
+    "the",
+    "blind",
+    "blind",
+    "assistive",
+    "games"
+  ],
+  "author": "SciFY Dev Team",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/scify/gamesfortheblind-web/issues"
+  },
+  "homepage": "https://github.com/scify/gamesfortheblind-web#readme"
+}

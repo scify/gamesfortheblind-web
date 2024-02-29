@@ -1,0 +1,9 @@
+* {
+    voice-family: male;
+    richness: 50;
+}
+
+.section-heading, #anchors-menu-container *, .anchors-container * {
+    voice-family: female;
+    richness: 50;
+}
