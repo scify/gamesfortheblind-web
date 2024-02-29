@@ -39,6 +39,16 @@ be tailored to the needs of the blind, by [SciFY](https://scify.org/en/project/l
 This project is essentially an HTML static page, with the relevant styles and scripts, bundled together. So just fire up
 a web server and browser of your choice, and open `index.html`.
 
+## About Google Analytics
+
+In order to initialize the file that will contain the variable for Google Analytics ID, run the following:
+
+```bash
+cp assets/js/constants.js.example assets/js/constants.js
+```
+
+And then populate the file with the appropriate variable
+
 ## Customization
 
 ### Customizing the styles

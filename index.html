@@ -2102,14 +2102,16 @@
 <script type="text/javascript"
         src="assets/js/main.js?layoutMode=default-layout&amp;graphicMode=default-graphic-mode&amp;minify=true"></script>
 
-
+<script type="text/javascript" src="assets/js/constants.js"></script>
 <script>
-    var _gaq = [['_setAccount', 'UA-71170331-1'], ['_trackPageview']];
-    (function (d, t) {
-        var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        g.src = '//www.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g, s)
-    }(document, 'script'));
+    if(window.GAMES_FOR_THE_BLIND_GA_ID) {
+        var _gaq = [['_setAccount', window.GAMES_FOR_THE_BLIND_GA_ID], ['_trackPageview']];
+        (function (d, t) {
+            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            g.src = '//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g, s)
+        }(document, 'script'));
+    }
 </script>
 
 

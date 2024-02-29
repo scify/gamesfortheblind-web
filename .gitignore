@@ -26,3 +26,6 @@ creds.js
 
 # Mac/OSX
 .DS_Store
+
+# Project secrets
+assets/js/constants.js
