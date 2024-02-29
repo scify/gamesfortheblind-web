@@ -1,0 +1,723 @@
+.scrollToTop {
+    padding:10px;
+    text-align:center;
+    font-weight: bold;
+    text-decoration: none;
+    position:fixed;
+    bottom: 20px;
+    right: 20px;
+    display:none;
+    width: 100px;
+    height: 100px;
+    background: url(/plugins/system/scrolltock/images/arrow_up.png) center center no-repeat; }
+.scrollToTop:hover{
+    text-decoration:none;
+}
+/**
+ * @package   Accessible Slideshow - accessibletemplate
+ * @version   1.0.0
+ * @author    Francesco Zaniol, accessibletemplate - http://www.accessibletemplate.com
+ * @copyright Copyright (C) 2011-Present Francesco Zaniol
+ * @license   http://ec.europa.eu/idabc/eupl.html EUPL v1.1 only
+ **/
+/*==========================================================================
+   SLIDESHOW STYLE, GENERAL
+==========================================================================*/
+.accessible-slideshow_outer{
+    position:relative;
+    overflow:hidden;
+    margin:0 auto;
+}
+.accessible-slideshow{
+    overflow:hidden;
+    position:relative;
+    clear: both;
+    margin:0;
+    padding:0;
+}
+.accessible-slideshow .slide{
+    overflow:hidden;
+    position:relative;
+    top:0;
+    left:0;
+    width:100%;
+}
+.accessible-slideshow .slide.hidden-slide{position:absolute;z-index:50;}
+.accessible-slideshow .slide.active-slide{z-index:99;position:relative;}
+.accessible-slideshow p.wrapper{margin:0;padding:0;}
+.accessible-slideshow img{
+    margin:0 auto;
+    display: block;
+}
+.accessible-slideshow_outer .slide-text{
+    display:block;
+    width: 100%;
+    background:#000;
+    color:#FFF;
+    overflow:hidden;
+}
+.default-layout .accessible-slideshow_outer.text-over-images_true .slide-text{
+    opacity:.9;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+}
+.default-layout .accessible-slideshow_outer.text-over-images_true .slide-text .slide-heading{
+    margin:0.4em 2%;
+    padding:0;
+    opacity:1;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.mobile-layout .accessible-slideshow_outer .slide-text{ margin:0; padding:0; }
+.best-legibility .accessible-slideshow_outer .slide-text{background-color:#333 !important;border:0 !important;}
+.best-legibility .accessible-slideshow_outer .slide-text h1,
+.best-legibility .accessible-slideshow_outer .slide-text h2,
+.best-legibility .accessible-slideshow_outer .slide-text h3,
+.best-legibility .accessible-slideshow_outer .slide-text h4,
+.best-legibility .accessible-slideshow_outer .slide-text h5,
+.best-legibility .accessible-slideshow_outer .slide-text h6,
+.best-legibility .accessible-slideshow_outer .slide-text p{color:#FFF !important;}
+.night-mode .accessible-slideshow_outer .slide-text{background-color:#000 !important}
+.default-layout .accessible-slideshow_outer .slide-text .slide-heading,
+.mobile-layout .accessible-slideshow_outer .slide-text .slide-heading{
+    margin:0.4em 2%;
+    padding:0;
+    font-weight: normal;
+}
+.default-layout .accessible-slideshow_outer .slide-text .slide-heading a,
+.mobile-layout .accessible-slideshow_outer .slide-text .slide-heading a{
+    text-decoration: underline;
+    border:0;
+}
+.default-layout .accessible-slideshow_outer .slide-text .slide-heading a:hover,
+.mobile-layout .accessible-slideshow_outer .slide-text .slide-heading a:hover,
+.default-layout .accessible-slideshow_outer .slide-text .slide-heading a:focus,
+.mobile-layout .accessible-slideshow_outer .slide-text .slide-heading a:focus{text-decoration:none;}
+.default-layout .accessible-slideshow_outer .slide-text p,
+.mobile-layout .accessible-slideshow_outer .slide-text p{
+    padding:0;
+    margin:0.3em 2% 1em 2%;
+}
+/*----------------------------------------------------------------
+-  BUTTONS (Dots and Arrows)
+---------------------------------------------------------------- */
+/*Style reset*/
+.accessible-slideshow_dot,
+.accessible-slideshow_arrow,
+.accessible-slideshow_dot:hover,
+.accessible-slideshow_dot:focus,
+.accessible-slideshow_dot:active,
+.accessible-slideshow_arrow:hover,
+.accessible-slideshow_arrow:focus,
+.accessible-slideshow_arrow:active
+{margin:0;padding:0;background:none !important;border:none !important;outline:0 !important}
+/*----------------------------------------------------------------
+-  DOTS
+---------------------------------------------------------------- */
+.accessible-slideshow_dots-container{
+    position:absolute;
+    margin:1em;
+    padding:0;
+    z-index:666;
+    overflow:visible;
+    speak:none;
+}
+.no-js .accessible-slideshow_dots-container{display:none;}
+.default-layout .text-over-images_true .accessible-slideshow_dots-container{
+    left:0;
+    top:0;
+}
+.default-layout .text-over-images_false .accessible-slideshow_dots-container{
+    bottom:0;
+    left:50%;
+}
+.default-layout .text-over-images_false .accessible-slideshow_dots-container-inner{
+    right:50%;
+    position: relative;
+}
+.accessible-slideshow_dots-container ol,
+.accessible-slideshow_dots-container li{margin:0;padding:0;list-style:none;overflow:hidden;}
+.mobile-layout .accessible-slideshow_dots-container{
+    position: relative;
+    float: left;
+    clear: both;
+    top:0;
+    left:50%;
+    margin:0;
+    padding:0;
+}
+.mobile-layout .accessible-slideshow_dots-container-inner{
+    margin:1em 0;
+    padding:0;
+    position: relative;
+    left: -50%;
+    clear: both;
+    overflow: visible;
+}
+.accessible-slideshow_dots-container:hover{}
+.accessible-slideshow_dots-container .accessible-slideshow_dot-wrapper{
+    display:block;
+    float:left;
+    position: relative;
+    width:40px;
+    height:40px;
+    margin:0;
+    padding:0;
+}
+.accessible-slideshow_dot{position:absolute;}
+/*--------- Dots decoration ---------*/
+.accessible-slideshow_dot .accessible-slideshow_dot-decoration-inner,
+.accessible-slideshow_dot .accessible-slideshow_dot-decoration-outer{
+    display:block;
+    position:relative;
+    border-radius:100%;
+    -moz-border-radius:100%;
+    -webkit-border-radius:100%;
+}
+.accessible-slideshow_dot .accessible-slideshow_dot-decoration-inner{
+    overflow:hidden;
+    text-indent:100%;
+    white-space:nowrap;
+}
+.accessible-slideshow_dot .accessible-slideshow_dot-decoration-outer:hover,
+.accessible-slideshow_dot .accessible-slideshow_dot-decoration-inner:hover{cursor:pointer;}
+/*--------- Dots dimension and position ---------*/
+.accessible-slideshow_dot-decoration-outer
+{top:0;left:0;width:24px;height:24px;}
+.accessible-slideshow_dot-decoration-inner
+{top:3px;left:3px;width:18px;height:18px;}
+.accessible-slideshow_dot:hover .accessible-slideshow_dot-decoration-outer,
+.accessible-slideshow_dot .accessible-slideshow_dot-decoration-outer:hover,
+.accessible-slideshow_dot.activeDot .accessible-slideshow_dot-decoration-outer,
+.accessible-slideshow_dot.focusedAnchor .accessible-slideshow_dot-decoration-outer
+{top:2px;left:2px;width:20px;height:20px;}
+.accessible-slideshow_dot:hover .accessible-slideshow_dot-decoration-inner,
+.accessible-slideshow_dot-decoration-outer:hover .accessible-slideshow_dot-decoration-inner,
+.accessible-slideshow_dot.activeDot .accessible-slideshow_dot-decoration-inner,
+.accessible-slideshow_dot.focusedAnchor .accessible-slideshow_dot-decoration-inner
+{top:3px;left:3px;width:14px;height:14px;}
+/*--------- Default colors ---------*/
+.accessible-slideshow_dot .accessible-slideshow_dot-decoration-inner,
+.accessible-slideshow_dot.activeDot .accessible-slideshow_dot-decoration-outer,
+.accessible-slideshow_dot.focusedAnchor .accessible-slideshow_dot-decoration-outer{background-color:#FFF;}
+.accessible-slideshow_dot .accessible-slideshow_dot-decoration-outer,
+.accessible-slideshow_dot.activeDot .accessible-slideshow_dot-decoration-inner,
+.accessible-slideshow_dot.focusedAnchor .accessible-slideshow_dot-decoration-inner{background-color:#111;}
+/*--------- Dots animation ---------*/
+.accessible-slideshow_dot-decoration-outer,
+.accessible-slideshow_dot-decoration-inner{
+    -webkit-transition:top .2s linear,left .2s linear,width .2s linear,height .2s linear,background-color .1s linear;
+    -moz-transition:top .2s linear,left .2s linear,width .2s linear,height .2s linear,background-color .1s linear;
+    -ms-transition:top .2s linear,left .2s linear,width .2s linear,height .2s linear,background-color .1s linear;
+    -o-transition:top .2s linear,left .2s linear,width .2s linear,height .2s linear,background-color .1s linear;
+    transition:top .2s linear,left .2s linear,width .2s linear,height .2s linear,background-color .1s linear;
+}
+/*----------------------------------------------------------------
+-  ARROWS
+---------------------------------------------------------------- */
+.accessible-slideshow_arrow,
+.accessible-slideshow_arrow:hover,
+.accessible-slideshow_arrow:focus,
+.accessible-slideshow_arrow:active{
+    display:block;
+    position:absolute;
+    top:50%;
+    margin-top:-36px;
+    z-index:666;
+    overflow:visible;
+    cursor:pointer;
+}
+.accessible-slideshow_arrow-left{left:-20px;right:auto;}
+.accessible-slideshow_arrow-right{right:-20px;left:auto;}
+.accessible-slideshow_arrow-decoration-outer,
+.accessible-slideshow_arrow-decoration-inner{
+    display:block;
+    width:1px;
+    height:1px;
+    position:relative;
+    border-style:solid;
+    cursor:pointer;
+}
+.accessible-slideshow_arrow-decoration-outer{border-width:39px;}
+.accessible-slideshow_arrow-decoration-inner{
+    top:-36px;
+    border-width:36px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-indent:100%;
+}
+
+.accessible-slideshow_arrow-left .accessible-slideshow_arrow-decoration-outer{
+    border-color:transparent #000 transparent transparent;
+}
+.accessible-slideshow_arrow-left .accessible-slideshow_arrow-decoration-inner{
+    right:34px;
+    border-color:transparent #FFF transparent transparent;
+}
+.accessible-slideshow_arrow-right .accessible-slideshow_arrow-decoration-outer{
+    border-color:transparent transparent transparent #000;
+}
+.accessible-slideshow_arrow-right .accessible-slideshow_arrow-decoration-inner{
+    right:38px;
+    border-color:transparent transparent transparent #FFF;
+}
+/*==========================================================================
+   OTHER MODES/LAYOUTS
+==========================================================================*/
+/*--------- no-js ---------*/
+.no-js .accessible-slideshow_dots-container,
+.no-js .accessible-slideshow_arrows-container{display:none !important;visibility:hidden;}
+/*--------- general ---------*/
+.full-access .accessible-slideshow_dots-container,
+.high-contrast .accessible-slideshow_dots-container,
+.full-access .accessible-slideshow_arrow,
+.high-contrast .accessible-slideshow_arrow{display:none !important;visibility: hidden;}
+.full-access .accessible-slideshow,
+.full-access .accessible-slideshow div,
+.high-contrast .accessible-slideshow,
+.high-contrast .accessible-slideshow div{border:0 !important}
+/*--------- text ---------*/
+.mobile-layout .accessible-slideshow_outer .slide-text,
+.full-access .accessible-slideshow_outer .slide-text,
+.high-contrast .accessible-slideshow_outer .slide-text{
+    display:block;
+    position:relative;
+    width:auto;
+    max-width:100%;
+    float:none;
+    clear:both;
+    bottom:0;
+    right:0;
+}
+/*--------- reset button style ---------*/
+.best-legibility .accessible-slideshow_arrow,
+.best-legibility .accessible-slideshow_dot,
+.best-legibility .accessible-slideshow_arrow:hover,
+.best-legibility .accessible-slideshow_dot:hover,
+.best-legibility .accessible-slideshow_arrow:active,
+.best-legibility .accessible-slideshow_dot:active,
+.best-legibility .accessible-slideshow_arrow:focus,
+.best-legibility .accessible-slideshow_dot:focus,
+.night-mode .accessible-slideshow_arrow,
+.night-mode .accessible-slideshow_dot,
+.night-mode .accessible-slideshow_arrow:hover,
+.night-mode .accessible-slideshow_dot:hover,
+.night-mode .accessible-slideshow_arrow:active,
+.night-mode .accessible-slideshow_dot:active,
+.night-mode .accessible-slideshow_arrow:focus,
+.night-mode .accessible-slideshow_dot:focus
+{background:none !important;border:none !important;}
+/*--------- dots style ---------*/
+.best-legibility .accessible-slideshow_dot-decoration-outer,
+.night-mode .accessible-slideshow_dot-decoration-outer,
+.best-legibility .accessible-slideshow_dot.activeDot .accessible-slideshow_dot-decoration-inner,
+.night-mode .accessible-slideshow_dot.activeDot .accessible-slideshow_dot-decoration-inner,
+.best-legibility .accessible-slideshow_dot.focusedAnchor .accessible-slideshow_dot-decoration-inner,
+.night-mode .accessible-slideshow_dot.focusedAnchor .accessible-slideshow_dot-decoration-inner
+{background-color:#111 !important;}
+.best-legibility .accessible-slideshow_dot-decoration-inner,
+.night-mode .accessible-slideshow_dot-decoration-inner,
+.best-legibility .accessible-slideshow_dot.activeDot .accessible-slideshow_dot-decoration-outer,
+.night-mode .accessible-slideshow_dot.activeDot .accessible-slideshow_dot-decoration-outer,
+.best-legibility .accessible-slideshow_dot.focusedAnchor .accessible-slideshow_dot-decoration-outer,
+.night-mode .accessible-slideshow_dot.focusedAnchor .accessible-slideshow_dot-decoration-outer
+{background-color:#FFF !important;}
+/*--------- arrows style ---------*/
+.best-legibility .accessible-slideshow_arrow-left,
+.night-mode .accessible-slideshow_arrow-left
+{border-color:transparent #000 transparent transparent !important;}
+.best-legibility .accessible-slideshow_arrow-left .accessible-slideshow_arrow-decoration-inner,
+.night-mode .accessible-slideshow_arrow-left .accessible-slideshow_arrow-decoration-inner
+{border-color:transparent #FFF transparent transparent !important;}
+.best-legibility .accessible-slideshow_arrow-right,
+.night-mode .accessible-slideshow_arrow-right
+{border-color:transparent transparent transparent #000 !important;}
+.best-legibility .accessible-slideshow_arrow-right .accessible-slideshow_arrow-decoration-inner,
+.night-mode .accessible-slideshow_arrow-right .accessible-slideshow_arrow-decoration-inner
+{border-color:transparent transparent transparent #FFF !important;}	.default-layout .accessible-slideshow_outer{width:100%;}
+.default-layout .accessible-slideshow_outer,
+.default-layout .accessible-slideshow,
+.default-layout .accessible-slideshow .slide{height:auto;}
+.accessible-slideshow_dot .accessible-slideshow_dot-decoration-inner,
+.accessible-slideshow_dot.activeDot .accessible-slideshow_dot-decoration-outer,
+.accessible-slideshow_dot.focusedAnchor .accessible-slideshow_dot-decoration-outer{background-color:#FFFFFF;}
+.accessible-slideshow_dot .accessible-slideshow_dot-decoration-outer,
+.accessible-slideshow_dot.activeDot .accessible-slideshow_dot-decoration-inner,
+.accessible-slideshow_dot.focusedAnchor .accessible-slideshow_dot-decoration-inner{background-color:#000000;}
+.accessible-slideshow_arrow-left .accessible-slideshow_arrow-decoration-outer{border-right-color:#000000;}
+.accessible-slideshow_arrow-right .accessible-slideshow_arrow-decoration-outer{border-left-color:#000000;}
+.accessible-slideshow_arrow-left .accessible-slideshow_arrow-decoration-inner{border-right-color:#FFFFFF;}
+.accessible-slideshow_arrow-right .accessible-slideshow_arrow-decoration-inner{border-left-color:#FFFFFF;}
+.default-layout .accessible-slideshow .slide-text,
+.mobile-layout .accessible-slideshow .slide-text{background-color:#000000;}
+.default-layout .accessible-slideshow .slide-heading,
+.mobile-layout .accessible-slideshow .slide-heading,
+.default-layout .accessible-slideshow .slide-heading a,
+.mobile-layout .accessible-slideshow .slide-heading a{color:#FFFFFF;}
+.default-layout .accessible-slideshow .slide-text .slide-heading,
+.mobile-layout .accessible-slideshow .slide-text .slide-heading{font-size:1.2em;}
+.default-layout .accessible-slideshow .slide-text p,
+.mobile-layout .accessible-slideshow .slide-text p{color:#DDDDDD;}
+.default-layout .accessible-slideshow .slide-text p,
+.mobile-layout .accessible-slideshow .slide-text p{font-size:1em;}
+.default-layout .accessible-slideshow img,
+.mobile-layout .accessible-slideshow img{min-width:100%;}
+.default-layout .accessible-slideshow .slide-text{height:auto}
+
+
+.full-layout-width .layout-width-rail {
+    width: 96%;
+    max-width: 96%;
+    min-width: 320px;
+}
+
+.liquid-layout-width .layout-width-rail {
+    width: 96%;
+    min-width: 320px;
+    max-width: 980px;
+}
+
+.fixed-layout-width .layout-width-rail {
+    width: 960px;
+    max-width: 960px;
+    min-width: 960px;
+}
+
+.fixed-layout-width #top-bar, .fixed-layout-width #accessibility-panel {
+    min-width: 960px;
+}
+
+.custom-layout-width .layout-width-rail {
+    max-width: 96%;
+    min-width: 320px;
+}
+
+#logo-wrap, #logo-wrap #logo-wrap-link, #logo-wrap img {
+}
+
+body {
+    font-size: 150%;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+div#custom-module-4-D3 {
+    width: 70opx;
+}
+
+* {
+    font-family: 'Ubuntu', sans-serif !important;
+    font-size: 20px !important;
+    line-height: 1.2em !important;
+    color: inherit !important;
+    text-indent: 0 !important;
+}
+
+.contactsupport-page fieldset legend {
+    text-indent: 0 !important;
+}
+
+h1, h2, h3, h4, h1 *, h2 *, h3 * {
+    font-family: 'Ubuntu Mono', sans-serif !important;
+    font-style: normal;
+}
+
+h2 {
+    font-size: 2em !important;
+}
+
+h3 {
+    font-size: 1.4em !important;
+}
+
+#titles-container {
+    margin-top: -54px !important;
+    margin-bottom: -24px !important;
+}
+
+#titles-container p {
+    font-size: 1.2em !important;
+    font-family: 'Ubuntu Mono', sans-serif !important;
+    padding-right: 15%;
+}
+
+#main-menu-container-inner a {
+    font-family: 'Ubuntu Condensed', sans-serif !important;
+    font-size: 1.2em !important;
+    color: #fff !important;
+}
+
+.slide-text {
+    display: none !important;
+}
+
+h1 strong {
+    font-size: 1.5em !important;
+}
+
+#accessibility-panel-inner .clear-both {
+    display: none !important;
+}
+
+#accessibility-panel-inner h3 {
+    font-size: 1.6em !important;
+}
+
+#top-bar-inner span {
+    line-height: 2.5em !important;
+}
+
+#footer {
+    padding: 0 !important;
+    color: white !important;
+}
+
+#footer .custom-module-outer {
+    margin: 0 !important;
+}
+
+#footer .custom-module-style_dark {
+    border: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 3% !important;
+    padding-top: 2em !important;
+    padding-bottom: 1em !important;
+}
+
+#footer h3 {
+    font-size: 1.4em !important;
+}
+
+#custom-modules-container-2-B {
+    float: left !important;
+    width: 30% !important;
+    margin: auto !important;
+}
+
+#custom-modules-container-2-B #custom-module-2-B1 {
+    width: 100%;
+    margin: 0 !important;
+}
+
+#custom-modules-container-2-B #custom-module-2-B1 .custom-module-style_light {
+    min-height: auto;
+    border: none !important;
+    margin: 0 !important;
+    background: none !important;
+}
+
+#custom-modules-container-2-B #custom-module-2-B1 .custom-module-style_light form {
+    margin: 0 1% !important;
+}
+
+#custom-modules-container-2-B #custom-module-2-B1 .custom-module-style_light #osdonatestatic input {
+    margin-left: 0 !important;
+}
+
+#custom-modules-container-2-B #custom-module-2-B2 {
+    display: none !important;
+}
+
+#custom-modules-container-2-B + #main-article-container {
+    float: left !important;
+    width: 70% !important;
+    margin: auto !important;
+    padding: 0.4em 4% 0.8em 4%;
+}
+
+.contactsupport-page h3 {
+    display: none !important;
+}
+
+.contactsupport-page p {
+    display: none !important;
+}
+
+.contactsupport-page fieldset {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.contactsupport-page #contact-form {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.contactsupport-page legend {
+    display: block !important;
+    margin: 0 1% 0.6em 1% !important;
+    padding: 0.3em 0 !important;
+    text-indent: 0.2em !important;
+    border-bottom: 1px solid #E3E1E1 !important;
+    font-family: 'Ubuntu Mono', sans-serif !important;
+    font-style: normal !important;
+    font-size: 1.4em !important;
+}
+
+.contactsupport-page dl {
+    margin: 0 1% !important;
+    padding: 0 !important;
+}
+
+.contactsupport-page dd {
+    float: left !important;
+}
+
+.contactsupport-page dt {
+    clear: both !important;
+    float: left !important;
+    min-width: 11em;
+}
+
+.contactsupport-page input[type=email], .contactsupport-page textarea {
+    width: 20em !important;
+    max-width: 98% !important;
+    margin: 0.4em 1% !important;
+    padding: 0.3em 0.2em !important;
+}
+
+.contactsupport-page dd button {
+    color: white !important;
+}
+
+.contactsupport-page input[type=checkbox] {
+    margin: 0.7em 1% !important;
+}
+
+i {
+    font-family: FontAwesome !important;
+    line-height: inherit !important;
+}
+
+.rokbox-wrapper {
+    display: none !important;
+}
+
+.jtubegallery .yt-fp-outer:first-child:nth-last-child(3) {
+    width: 50%;
+    padding-left: 10%;
+    padding-right: 6%;
+}
+
+.jtubegallery .yt-fp-outer:nth-child(2):nth-last-child(2) {
+    width: 50%;
+    padding-left: 6%;
+    padding-right: 10%;
+}
+
+.scrollToTop {
+    display: none !important;
+}
+
+form label {
+    font-style: normal;
+}
+
+#custom-modules-container-1-C .custom-module-style_light {
+    margin: -3px 0 !important;
+    border: none !important;
+}
+
+.moduletable.zf--block-coat--marked-light.game-module {
+    box-shadow: 0 0 5px black;
+}
+
+.game-module * {
+    text-align: center;
+}
+
+.game-module .language-div {
+    width: 100%;
+    display: block;
+    padding-bottom: 12px;
+    text-align: center;
+}
+
+.game-module .language-div div {
+    float: left;
+    width: 25%;
+    display: block;
+}
+
+.game-module .language-div .language-label {
+    float: none;
+    width: 100%;
+    padding-top: 4%;
+    margin: auto;
+}
+
+.game-module .language-div::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.game-module .language-div h3 {
+    border: none;
+    margin: auto;
+    margin-top: -0.6em;
+}
+
+.game-module img {
+    max-width: 60%;
+    display: block;
+    margin: auto;
+}
+
+.game-module .language-label img {
+    max-width: 8%;
+}
+
+.language-div:first-of-type {
+    margin-top: -18px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 10px;
+}
+
+#custom-module-4-C3 p {
+    text-align: justify;
+}
+
+.titlebelowthumb p {
+    display: none;
+}
+
+.item-page {
+    text-align: center;
+}
+
+.fastsocialshare_container {
+    display: inline-block;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.fastsocialshare_container * {
+    float: none;
+    display: inline-block;
+    margin: 0 2px;
+    padding: 0;
+    line-height: 15px !important;
+}
+
+.fastsocialshare_container script {
+    display: none;
+}
+
+#goto-top {
+    margin-top: 0 !important;
+}
+
+#___plus_0 {
+    margin-left: -32px !important;
+}
+
+.fastsocialshare_container .fastsocialshare-share-lin .IN-widget span span a::after {
+    float: right;
+}
+
+.language-div * {
+    font-size: 0.9em !important;
+}
