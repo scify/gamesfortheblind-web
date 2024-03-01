@@ -33,6 +33,8 @@ jobs:
         variables: |
           GOOGLE_ANALYTICS_ID=${{ secrets.GOOGLE_ANALYTICS }}
 
+    - name: Remove constants.js.j2 file
+      run: rm assets/js/constants.js.j2
 
     - name: SCP files to production server
       uses: easingthemes/ssh-deploy@v3.0.1
