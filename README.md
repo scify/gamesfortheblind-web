@@ -44,10 +44,10 @@ a web server and browser of your choice, and open `index.html`.
 In order to initialize the file that will contain the variable for Google Analytics ID, run the following:
 
 ```bash
-cp assets/js/constants.js.example assets/js/constants.js
+cp assets/js/constants.js.j2 assets/js/constants.js
 ```
 
-And then populate the file with the appropriate variable
+And then replace the variables in the file with the appropriate values
 
 ## Customization
 

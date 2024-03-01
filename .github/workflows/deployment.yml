@@ -1,0 +1,45 @@
+name: Deploy to Production
+
+on:
+  push:
+
+    branches:
+
+      - production
+
+env:
+  PRODUCTION_SERVER_HOSTNAME: 'production3.scify.org'
+  REMOTE_USER: 'project_games_for_the_blind'
+  PROJECT_URL: 'gamesfortheblind.org'
+
+jobs:
+
+ deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3.2.0
+    - name: list files
+      run: ls -al
+    - name: get folder
+      run: pwd
+
+    - name: Create constants.js file
+      uses: cuchi/jinja2-action@v1.2.0
+      with:
+        template: assets/js/constants.js.j2
+        output_file: assets/js/constants.js
+        variables: |
+          GOOGLE_ANALYTICS_ID=${{ secrets.GOOGLE_ANALYTICS }}
+
+
+    - name: SCP files to production server
+      uses: easingthemes/ssh-deploy@v3.0.1
+      env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_TO_PRODUCTION3 }}
+          REMOTE_PORT: 1337
+          SOURCE: "./"
+          REMOTE_HOST: ${{ env.PRODUCTION_SERVER_HOSTNAME }}
+          REMOTE_USER: ${{ env.REMOTE_USER }}
+          TARGET: "/home/${{ env.REMOTE_USER }}/www/${{ env.PROJECT_URL }}"
