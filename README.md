@@ -63,7 +63,7 @@ This is a static HTML project, so feel free to add more elements, scripts, and s
 
 **Question:** Is this package free to use?
 
-**Answer:** Yes. This plugin is totally free and developed as
+**Answer:** Yes. This project is totally free and developed as
 an [Open-Source project](https://github.com/scify/gamesfortheblind-web).
 
 ## Changelog
