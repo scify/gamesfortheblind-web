@@ -680,6 +680,17 @@ form label {
     text-align: justify;
 }
 
+#custom-module-4-C3 .custom-module-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#custom-module-4-C3 .custom-module-inner .cookies-policy {
+    margin-bottom: 0.9375rem;
+    text-align: center;
+}
+
 .titlebelowthumb p {
     display: none;
 }
