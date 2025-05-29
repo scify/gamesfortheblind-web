@@ -8,7 +8,7 @@ on:
       - production
 
 env:
-  PRODUCTION_SERVER_HOSTNAME: 'production3.scify.org'
+  #PRODUCTION_SERVER_HOSTNAME: 'production3.scify.org'
   REMOTE_USER: 'project_games_for_the_blind'
   PROJECT_URL: 'gamesfortheblind.org'
 
@@ -42,6 +42,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_TO_PRODUCTION3 }}
           REMOTE_PORT: 1337
           SOURCE: "./"
-          REMOTE_HOST: ${{ env.PRODUCTION_SERVER_HOSTNAME }}
+          REMOTE_HOST: ${{ secrets.PRODUCTION_3_HOST }}
           REMOTE_USER: ${{ env.REMOTE_USER }}
           TARGET: "/home/${{ env.REMOTE_USER }}/www/${{ env.PROJECT_URL }}"
